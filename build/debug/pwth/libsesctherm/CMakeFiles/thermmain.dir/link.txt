@@ -1,0 +1,1 @@
+/usr/bin/c++  -std=c++14 -g -O0 -DDEBUG=1 -fPIC  -rdynamic CMakeFiles/thermmain.dir/thermmain.cpp.o  -o thermmain libsesctherm.a ../../misc/libsuc/libsuc.a ../libpwrmodel/libpwrmodel.a 

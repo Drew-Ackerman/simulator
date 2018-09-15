@@ -1,0 +1,1 @@
+cmd='/home/wsu001/projs/esesc/pwth/floorplan/configure;/home/wsu001/projs/esesc/pwth/floorplan;/home/wsu001/build/debug/floorplan'

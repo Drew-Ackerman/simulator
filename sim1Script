@@ -1,0 +1,153 @@
+#Usage - from the run1 directory, run this script. If notifies the user of missing files
+
+echo "Zugzug"
+
+if [ ! -d sim1 ]; then
+    echo "missing directory sim1"
+    exit 1
+elif [ ! -d log ]; then
+    echo "missing directory: log"
+    exit 1
+elif [ ! -f sim1/conf_crafty ]; then
+    echo "sim1/conf_crafty missing"
+    exit 1
+elif [ ! -f sim1/conf_sjeng ]; then
+    echo "sim1/conf_sjeng missing"
+    exit 1
+elif [ ! -f sim1/simu_ooo_superscalar ]; then
+    echo "sim1/simu_ooo_superscalar missing"
+    exit 1
+elif [ ! -f sim1/simu_inorder_superscalar ]; then
+    echo "sim1/simu_inorder_superscalar missing"
+    exit 1
+elif [ ! -f sim1/simu_ooo_singleIssue ]; then
+    echo "sim1/simu_ooo_singleIssue missing"
+    exit 1
+elif [ ! -f sim1/simu_inorder_singleIssue ]; then
+    echo "sim1/simu_inorder_singleIssue"
+    exit 1
+elif [ ! -f inputs/crafty.in ]; then
+    echo "inputs/crafty.in missing"
+    exit 1
+elif [ ! -f inputs/sjeng.txt ]; then
+    echo "sjeng.txt missing"
+    exit 1
+fi
+
+echo "Dabu"
+echo "If you have reached this point, you are ready to press Ctrl+C to kill this process then run the following:"
+echo "nohup ./sim1Script &"
+echo "Results should be in log/sim1Results.log_* file"
+sleep 18
+
+
+SUFFIX=`date +%s`
+RESULTS=log/sim1Results.log_$SUFFIX
+date > $RESULTS
+
+#Part 1 - Sim 1
+cp sim1/conf_crafty esesc.conf;
+cp sim1/simu_ooo_superscalar simu.conf.apache;
+OUTPUT_FILE=log/Part1_crafty_ooo_superscalar.txt
+
+../main/esesc -j4 < inputs/crafty.in > Part1.out;
+~/projs/esesc/conf/scripts/report.pl -last > $OUTPUT_FILE;
+echo $OUTPUT_FILE >> $RESULTS;
+cat $OUTPUT_FILE >> $RESULTS;
+date >> $RESULTS
+
+
+#Part 2
+OUTPUT_FILE=log/Part2_crafty_ooo_superscalar.txt
+
+../main/esesc -j4 < inputs/crafty.in > Part2.out;
+~/projs/esesc/conf/scripts/report.pl -last > $OUTPUT_FILE;
+echo $OUTPUT_FILE >> $RESULTS;
+cat $OUTPUT_FILE >> $RESULTS;
+date >> $RESULTS
+
+
+#Part 3 - Sim 2
+cp sim1/conf_sjeng esesc.conf;
+cp sim1/simu_ooo_superscalar simu.conf.apache;
+OUTPUT_FILE=log/Part3_sjeng_ooo_superscalar.txt
+
+../main/esesc -j4 > Part3.out;
+~/projs/esesc/conf/scripts/report.pl -last > $OUTPUT_FILE;
+echo $OUTPUT_FILE >> $RESULTS;
+cat $OUTPUT_FILE >> $RESULTS;
+date >> $RESULTS
+
+
+#Part 5a - Sim 3
+cp sim1/conf_crafty esesc.conf;
+cp sim1/simu_inorder_superscalar simu.conf.apache;
+OUTPUT_FILE=log/Part5_crafty_inorder_superscalar.txt
+
+../main/esesc -j4 < inputs/crafty.in > Part5a.out;
+~/projs/esesc/conf/scripts/report.pl -last > $OUTPUT_FILE;
+echo $OUTPUT_FILE >> $RESULTS;
+cat $OUTPUT_FILE >> $RESULTS;
+date >> $RESULTS
+
+
+#Part 5b - Sim 4
+cp sim1/conf_sjeng esesc.conf;
+cp sim1/simu_inorder_superscalar simu.conf.apache;
+OUTPUT_FILE=log/Part5_sjeng_inorder_superscalar.txt 
+
+../main/esesc -j4  > Part5b.out;
+~/projs/esesc/conf/scripts/report.pl -last > $OUTPUT_FILE;
+echo $OUTPUT_FILE >> $RESULTS;
+cat $OUTPUT_FILE >> $RESULTS;
+date >> $RESULTS
+
+
+#Part 6a - Sim 5
+cp sim1/conf_crafty esesc.conf;
+cp sim1/simu_ooo_singleIssue simu.conf.apache;
+OUTPUT_FILE=log/Part6_crafty_ooo_singleIssue.txt 
+
+../main/esesc -j4 < inputs/crafty.in > Part6a.out;
+~/projs/esesc/conf/scripts/report.pl -last > $OUTPUT_FILE;
+echo $OUTPUT_FILE >> $RESULTS;
+cat $OUTPUT_FILE >> $RESULTS;
+date >> $RESULTS
+
+
+#Part 6b - Sim 6
+cp sim1/conf_sjeng esesc.conf;
+cp sim1/simu_ooo_singleIssue simu.conf.apache;
+OUTPUT_FILE=log/Part6_sjeng_ooo_singleIssue.txt 
+
+../main/esesc -j4 > Part6b.out;
+~/projs/esesc/conf/scripts/report.pl -last > $OUTPUT_FILE;
+echo $OUTPUT_FILE >> $RESULTS;
+cat $OUTPUT_FILE >> $RESULTS;
+date >> $RESULTS
+
+
+#Part 6c - Sim 7
+cp sim1/conf_crafty esesc.conf;
+cp sim1/simu_inorder_singleIssue simu.conf.apache;
+OUTPUT_FILE=log/Part6_crafty_inorder_singleIssue.txt 
+
+../main/esesc -j4 < inputs/crafty.in > Part6c.out;
+~/projs/esesc/conf/scripts/report.pl -last > $OUTPUT_FILE;
+echo $OUTPUT_FILE >> $RESULTS;
+cat $OUTPUT_FILE >> $RESULTS;
+date >> $RESULTS
+
+
+#Part 6d - Sim 8
+cp sim1/conf_sjeng esesc.conf;
+cp sim1/simu_inorder_singleIssue simu.conf.apache;
+OUTPUT_FILE=log/Part6_sjeng_inorder_singleIssue.txt 
+
+../main/esesc -j4 > Part6d.out;
+~/projs/esesc/conf/scripts/report.pl -last > $OUTPUT_FILE;
+echo $OUTPUT_FILE >> $RESULTS;
+cat $OUTPUT_FILE >> $RESULTS;
+date >> $RESULTS
+
+echo "Work complete!"

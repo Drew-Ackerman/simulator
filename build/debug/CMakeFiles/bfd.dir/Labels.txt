@@ -1,0 +1,13 @@
+# Target labels
+ bfd
+# Source files and their labels
+/home/wsu001/build/debug/CMakeFiles/bfd
+/home/wsu001/build/debug/CMakeFiles/bfd.rule
+/home/wsu001/build/debug/CMakeFiles/bfd-complete.rule
+/home/wsu001/build/debug/bfd/stampdir/bfd-install.rule
+/home/wsu001/build/debug/bfd/stampdir/bfd-mkdir.rule
+/home/wsu001/build/debug/bfd/stampdir/bfd-download.rule
+/home/wsu001/build/debug/bfd/stampdir/bfd-update.rule
+/home/wsu001/build/debug/bfd/stampdir/bfd-patch.rule
+/home/wsu001/build/debug/bfd/stampdir/bfd-configure.rule
+/home/wsu001/build/debug/bfd/stampdir/bfd-build.rule

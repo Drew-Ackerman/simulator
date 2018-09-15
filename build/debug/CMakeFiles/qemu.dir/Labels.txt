@@ -1,0 +1,13 @@
+# Target labels
+ qemu
+# Source files and their labels
+/home/wsu001/build/debug/CMakeFiles/qemu
+/home/wsu001/build/debug/CMakeFiles/qemu.rule
+/home/wsu001/build/debug/CMakeFiles/qemu-complete.rule
+/home/wsu001/build/debug/qemu/stampdir/qemu-install.rule
+/home/wsu001/build/debug/qemu/stampdir/qemu-mkdir.rule
+/home/wsu001/build/debug/qemu/stampdir/qemu-download.rule
+/home/wsu001/build/debug/qemu/stampdir/qemu-update.rule
+/home/wsu001/build/debug/qemu/stampdir/qemu-patch.rule
+/home/wsu001/build/debug/qemu/stampdir/qemu-configure.rule
+/home/wsu001/build/debug/qemu/stampdir/qemu-build.rule

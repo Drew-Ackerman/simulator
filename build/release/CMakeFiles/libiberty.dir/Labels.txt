@@ -1,0 +1,13 @@
+# Target labels
+ libiberty
+# Source files and their labels
+/home/wsu001/build/release/CMakeFiles/libiberty
+/home/wsu001/build/release/CMakeFiles/libiberty.rule
+/home/wsu001/build/release/CMakeFiles/libiberty-complete.rule
+/home/wsu001/build/release/libiberty/stampdir/libiberty-install.rule
+/home/wsu001/build/release/libiberty/stampdir/libiberty-mkdir.rule
+/home/wsu001/build/release/libiberty/stampdir/libiberty-download.rule
+/home/wsu001/build/release/libiberty/stampdir/libiberty-update.rule
+/home/wsu001/build/release/libiberty/stampdir/libiberty-patch.rule
+/home/wsu001/build/release/libiberty/stampdir/libiberty-configure.rule
+/home/wsu001/build/release/libiberty/stampdir/libiberty-build.rule

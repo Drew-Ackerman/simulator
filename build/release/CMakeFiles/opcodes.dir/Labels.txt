@@ -1,0 +1,13 @@
+# Target labels
+ opcodes
+# Source files and their labels
+/home/wsu001/build/release/CMakeFiles/opcodes
+/home/wsu001/build/release/CMakeFiles/opcodes.rule
+/home/wsu001/build/release/CMakeFiles/opcodes-complete.rule
+/home/wsu001/build/release/opcodes/stampdir/opcodes-install.rule
+/home/wsu001/build/release/opcodes/stampdir/opcodes-mkdir.rule
+/home/wsu001/build/release/opcodes/stampdir/opcodes-download.rule
+/home/wsu001/build/release/opcodes/stampdir/opcodes-update.rule
+/home/wsu001/build/release/opcodes/stampdir/opcodes-patch.rule
+/home/wsu001/build/release/opcodes/stampdir/opcodes-configure.rule
+/home/wsu001/build/release/opcodes/stampdir/opcodes-build.rule

@@ -1,0 +1,1 @@
+cmd='/home/wsu001/projs/esesc/misc/bfd/configure;--prefix=/home/wsu001/build/debug/bfd;CFLAGS= -g -I/home/wsu001/projs/esesc/misc/include;--enable-64-bit-bfd'

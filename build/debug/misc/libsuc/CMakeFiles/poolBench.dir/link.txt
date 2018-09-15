@@ -1,0 +1,1 @@
+/usr/bin/c++  -std=c++14 -g -O0 -DDEBUG=1 -fPIC  -rdynamic CMakeFiles/poolBench.dir/poolBench.cpp.o  -o poolBench libsuc.a -lpthread 

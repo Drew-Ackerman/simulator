@@ -1,0 +1,1 @@
+cmd='/home/wsu001/projs/esesc/gold/configure;/home/wsu001/projs/esesc/gold;/home/wsu001/build/release/gold'

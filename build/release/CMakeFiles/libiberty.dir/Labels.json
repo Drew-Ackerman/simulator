@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/wsu001/build/release/CMakeFiles/libiberty"
+		},
+		{
+			"file" : "/home/wsu001/build/release/CMakeFiles/libiberty.rule"
+		},
+		{
+			"file" : "/home/wsu001/build/release/CMakeFiles/libiberty-complete.rule"
+		},
+		{
+			"file" : "/home/wsu001/build/release/libiberty/stampdir/libiberty-install.rule"
+		},
+		{
+			"file" : "/home/wsu001/build/release/libiberty/stampdir/libiberty-mkdir.rule"
+		},
+		{
+			"file" : "/home/wsu001/build/release/libiberty/stampdir/libiberty-download.rule"
+		},
+		{
+			"file" : "/home/wsu001/build/release/libiberty/stampdir/libiberty-update.rule"
+		},
+		{
+			"file" : "/home/wsu001/build/release/libiberty/stampdir/libiberty-patch.rule"
+		},
+		{
+			"file" : "/home/wsu001/build/release/libiberty/stampdir/libiberty-configure.rule"
+		},
+		{
+			"file" : "/home/wsu001/build/release/libiberty/stampdir/libiberty-build.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"libiberty"
+		],
+		"name" : "libiberty"
+	}
+}

@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/wsu001/build/release/CMakeFiles/gold"
+		},
+		{
+			"file" : "/home/wsu001/build/release/CMakeFiles/gold.rule"
+		},
+		{
+			"file" : "/home/wsu001/build/release/CMakeFiles/gold-complete.rule"
+		},
+		{
+			"file" : "/home/wsu001/build/release/gold/stampdir/gold-install.rule"
+		},
+		{
+			"file" : "/home/wsu001/build/release/gold/stampdir/gold-mkdir.rule"
+		},
+		{
+			"file" : "/home/wsu001/build/release/gold/stampdir/gold-download.rule"
+		},
+		{
+			"file" : "/home/wsu001/build/release/gold/stampdir/gold-update.rule"
+		},
+		{
+			"file" : "/home/wsu001/build/release/gold/stampdir/gold-patch.rule"
+		},
+		{
+			"file" : "/home/wsu001/build/release/gold/stampdir/gold-configure.rule"
+		},
+		{
+			"file" : "/home/wsu001/build/release/gold/stampdir/gold-build.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"gold"
+		],
+		"name" : "gold"
+	}
+}

@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/wsu001/build/release/CMakeFiles/bfd"
+		},
+		{
+			"file" : "/home/wsu001/build/release/CMakeFiles/bfd.rule"
+		},
+		{
+			"file" : "/home/wsu001/build/release/CMakeFiles/bfd-complete.rule"
+		},
+		{
+			"file" : "/home/wsu001/build/release/bfd/stampdir/bfd-install.rule"
+		},
+		{
+			"file" : "/home/wsu001/build/release/bfd/stampdir/bfd-mkdir.rule"
+		},
+		{
+			"file" : "/home/wsu001/build/release/bfd/stampdir/bfd-download.rule"
+		},
+		{
+			"file" : "/home/wsu001/build/release/bfd/stampdir/bfd-update.rule"
+		},
+		{
+			"file" : "/home/wsu001/build/release/bfd/stampdir/bfd-patch.rule"
+		},
+		{
+			"file" : "/home/wsu001/build/release/bfd/stampdir/bfd-configure.rule"
+		},
+		{
+			"file" : "/home/wsu001/build/release/bfd/stampdir/bfd-build.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"bfd"
+		],
+		"name" : "bfd"
+	}
+}

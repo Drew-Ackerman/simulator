@@ -1,0 +1,13 @@
+# Target labels
+ gold
+# Source files and their labels
+/home/wsu001/build/release/CMakeFiles/gold
+/home/wsu001/build/release/CMakeFiles/gold.rule
+/home/wsu001/build/release/CMakeFiles/gold-complete.rule
+/home/wsu001/build/release/gold/stampdir/gold-install.rule
+/home/wsu001/build/release/gold/stampdir/gold-mkdir.rule
+/home/wsu001/build/release/gold/stampdir/gold-download.rule
+/home/wsu001/build/release/gold/stampdir/gold-update.rule
+/home/wsu001/build/release/gold/stampdir/gold-patch.rule
+/home/wsu001/build/release/gold/stampdir/gold-configure.rule
+/home/wsu001/build/release/gold/stampdir/gold-build.rule
