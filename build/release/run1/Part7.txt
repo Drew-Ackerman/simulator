@@ -1,0 +1,6 @@
+Specify the trace to process
+./report.pl [options] <sescDump>
+	-a            : Reports for all the stat files in current directory
+	-last         : Reports the newest stat file in current directory
+	-table        : Statistics table summary (good for scripts)
+	-help         : Show this help

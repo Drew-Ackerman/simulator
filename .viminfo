@@ -15,17 +15,17 @@
 
 # Command Line History (newest to oldest):
 :q
-|2,0,1537023314,,"q"
-:q!
-|2,0,1536531811,,"q!"
-:wq
-|2,0,1536529966,,"wq"
+|2,0,1537130467,,"q"
 :w
-|2,0,1536528422,,"w"
+|2,0,1537062443,,"w"
+:wq
+|2,0,1537062385,,"wq"
+:q!
+|2,0,1537061885,,"q!"
 
 # Search String History (newest to oldest):
 ? \<benchName\>
-|2,1,1536528399,,"\\<benchName\\>"
+|2,1,1537031389,,"\\<benchName\\>"
 
 # Expression History (newest to oldest):
 
@@ -35,220 +35,349 @@
 
 # Registers:
 ""-	CHAR	0
-	b
-|3,1,36,0,1,0,1536531785,"b"
+	 
+|3,1,36,0,1,0,1537062368," "
 
 # File marks:
-'0  60  6  ~/wsu001
-|4,48,60,6,1537023314,"~/wsu001"
-'1  61  0  ~/build/release/run/esesc.conf
-|4,49,61,0,1536531811,"~/build/release/run/esesc.conf"
-'2  17  0  ~/build/release/run/esesc.conf
-|4,50,17,0,1536529966,"~/build/release/run/esesc.conf"
-'3  17  0  ~/build/release/run/esesc.conf
-|4,51,17,0,1536529966,"~/build/release/run/esesc.conf"
-'4  1  0  ~/build/release/run/report0.txt
-|4,52,1,0,1536529866,"~/build/release/run/report0.txt"
-'5  19  0  ~/build/release/run/esesc.conf
-|4,53,19,0,1536528423,"~/build/release/run/esesc.conf"
-'6  19  0  ~/build/release/run/esesc.conf
-|4,54,19,0,1536528423,"~/build/release/run/esesc.conf"
-'7  18  0  ~/build/release/run/esesc.conf
-|4,55,18,0,1536528423,"~/build/release/run/esesc.conf"
-'8  18  0  ~/build/release/run/esesc.conf
-|4,56,18,0,1536528423,"~/build/release/run/esesc.conf"
-'9  1  0  ~/build/release/esesc.conf
-|4,57,1,0,1536528371,"~/build/release/esesc.conf"
+'0  52  0  ~/build/release/run1/sim1Script
+|4,48,52,0,1537130467,"~/build/release/run1/sim1Script"
+'1  20  20  ~/build/release/run1/sim1/simu_ooo_superscalar
+|4,49,20,20,1537062445,"~/build/release/run1/sim1/simu_ooo_superscalar"
+'2  17  0  ~/build/release/run1/sim1/simu_ooo_singleIssue
+|4,50,17,0,1537062423,"~/build/release/run1/sim1/simu_ooo_singleIssue"
+'3  20  20  ~/build/release/run1/sim1/simu_inorder_superscalar
+|4,51,20,20,1537062385,"~/build/release/run1/sim1/simu_inorder_superscalar"
+'4  14  20  ~/build/release/run1/sim1/simu_inorder_singleIssue
+|4,52,14,20,1537062317,"~/build/release/run1/sim1/simu_inorder_singleIssue"
+'5  20  20  ~/build/release/run1/sim1/simu_inorder_singleIssue
+|4,53,20,20,1537062289,"~/build/release/run1/sim1/simu_inorder_singleIssue"
+'6  20  20  ~/build/release/run1/sim1/simu_inorder_singleIssue
+|4,54,20,20,1537062289,"~/build/release/run1/sim1/simu_inorder_singleIssue"
+'7  19  0  ~/build/release/run1/sim1/conf_crafty
+|4,55,19,0,1537061897,"~/build/release/run1/sim1/conf_crafty"
+'8  2  5  ~/build/release/run1/sim1/conf_crafty
+|4,56,2,5,1537061885,"~/build/release/run1/sim1/conf_crafty"
+'9  2  5  ~/build/release/run1/sim1/conf_crafty
+|4,57,2,5,1537061885,"~/build/release/run1/sim1/conf_crafty"
 
 # Jumplist (newest first):
--'  60  6  ~/wsu001
-|4,39,60,6,1537023314,"~/wsu001"
--'  1  0  ~/wsu001
-|4,39,1,0,1537023312,"~/wsu001"
--'  61  0  ~/build/release/run/esesc.conf
-|4,39,61,0,1536531811,"~/build/release/run/esesc.conf"
--'  61  0  ~/build/release/run/esesc.conf
-|4,39,61,0,1536531811,"~/build/release/run/esesc.conf"
--'  18  1  ~/build/release/run/esesc.conf
-|4,39,18,1,1536531792,"~/build/release/run/esesc.conf"
--'  18  1  ~/build/release/run/esesc.conf
-|4,39,18,1,1536531792,"~/build/release/run/esesc.conf"
--'  17  0  ~/build/release/run/esesc.conf
-|4,39,17,0,1536531785,"~/build/release/run/esesc.conf"
--'  17  0  ~/build/release/run/esesc.conf
-|4,39,17,0,1536531785,"~/build/release/run/esesc.conf"
--'  17  0  ~/build/release/run/esesc.conf
-|4,39,17,0,1536529966,"~/build/release/run/esesc.conf"
--'  17  0  ~/build/release/run/esesc.conf
-|4,39,17,0,1536529966,"~/build/release/run/esesc.conf"
--'  19  0  ~/build/release/run/esesc.conf
-|4,39,19,0,1536529955,"~/build/release/run/esesc.conf"
--'  18  0  ~/build/release/run/esesc.conf
-|4,39,18,0,1536529955,"~/build/release/run/esesc.conf"
--'  19  0  ~/build/release/run/esesc.conf
-|4,39,19,0,1536529955,"~/build/release/run/esesc.conf"
--'  18  0  ~/build/release/run/esesc.conf
-|4,39,18,0,1536529955,"~/build/release/run/esesc.conf"
--'  1  0  ~/build/release/run/report0.txt
-|4,39,1,0,1536529866,"~/build/release/run/report0.txt"
--'  1  0  ~/build/release/run/report0.txt
-|4,39,1,0,1536529866,"~/build/release/run/report0.txt"
--'  1  0  ~/build/release/run/report0.txt
-|4,39,1,0,1536529866,"~/build/release/run/report0.txt"
--'  1  0  ~/build/release/run/report0.txt
-|4,39,1,0,1536529866,"~/build/release/run/report0.txt"
--'  1  0  ~/build/release/run/report0.txt
-|4,39,1,0,1536529866,"~/build/release/run/report0.txt"
--'  1  0  ~/build/release/run/report0.txt
-|4,39,1,0,1536529866,"~/build/release/run/report0.txt"
--'  1  0  ~/build/release/run/report0.txt
-|4,39,1,0,1536529866,"~/build/release/run/report0.txt"
--'  1  0  ~/build/release/run/report0.txt
-|4,39,1,0,1536529866,"~/build/release/run/report0.txt"
--'  18  0  ~/build/release/run/esesc.conf
-|4,39,18,0,1536528423,"~/build/release/run/esesc.conf"
--'  18  0  ~/build/release/run/esesc.conf
-|4,39,18,0,1536528423,"~/build/release/run/esesc.conf"
--'  18  0  ~/build/release/run/esesc.conf
-|4,39,18,0,1536528423,"~/build/release/run/esesc.conf"
--'  18  0  ~/build/release/run/esesc.conf
-|4,39,18,0,1536528423,"~/build/release/run/esesc.conf"
--'  17  0  ~/build/release/run/esesc.conf
-|4,39,17,0,1536528399,"~/build/release/run/esesc.conf"
--'  17  0  ~/build/release/run/esesc.conf
-|4,39,17,0,1536528399,"~/build/release/run/esesc.conf"
--'  17  0  ~/build/release/run/esesc.conf
-|4,39,17,0,1536528399,"~/build/release/run/esesc.conf"
--'  17  0  ~/build/release/run/esesc.conf
-|4,39,17,0,1536528399,"~/build/release/run/esesc.conf"
--'  1  0  ~/build/release/esesc.conf
-|4,39,1,0,1536528371,"~/build/release/esesc.conf"
--'  1  0  ~/build/release/esesc.conf
-|4,39,1,0,1536528371,"~/build/release/esesc.conf"
--'  1  0  ~/build/release/esesc.conf
-|4,39,1,0,1536528371,"~/build/release/esesc.conf"
--'  1  0  ~/build/release/esesc.conf
-|4,39,1,0,1536528371,"~/build/release/esesc.conf"
--'  1  0  ~/build/release/esesc.conf
-|4,39,1,0,1536528371,"~/build/release/esesc.conf"
--'  1  0  ~/build/release/esesc.conf
-|4,39,1,0,1536528371,"~/build/release/esesc.conf"
--'  1  0  ~/build/release/esesc.conf
-|4,39,1,0,1536528371,"~/build/release/esesc.conf"
--'  1  0  ~/build/release/esesc.conf
-|4,39,1,0,1536528371,"~/build/release/esesc.conf"
--'  1  0  ~/build/release/esesc.conf
-|4,39,1,0,1536528371,"~/build/release/esesc.conf"
--'  1  0  ~/build/release/esesc.conf
-|4,39,1,0,1536528371,"~/build/release/esesc.conf"
--'  1  0  ~/build/release/esesc.conf
-|4,39,1,0,1536528371,"~/build/release/esesc.conf"
--'  1  0  ~/build/release/esesc.conf
-|4,39,1,0,1536528371,"~/build/release/esesc.conf"
--'  1  0  ~/build/release/esesc.conf
-|4,39,1,0,1536528371,"~/build/release/esesc.conf"
--'  1  0  ~/build/release/esesc.conf
-|4,39,1,0,1536528371,"~/build/release/esesc.conf"
--'  1  0  ~/build/release/esesc.conf
-|4,39,1,0,1536528371,"~/build/release/esesc.conf"
--'  1  0  ~/build/release/esesc.conf
-|4,39,1,0,1536528371,"~/build/release/esesc.conf"
--'  1  0  ~/build/release/esesc.conf
-|4,39,1,0,1536528371,"~/build/release/esesc.conf"
--'  1  0  ~/build/release/esesc.conf
-|4,39,1,0,1536528371,"~/build/release/esesc.conf"
--'  1  0  ~/build/release/esesc.conf
-|4,39,1,0,1536528371,"~/build/release/esesc.conf"
--'  1  0  ~/build/release/esesc.conf
-|4,39,1,0,1536528371,"~/build/release/esesc.conf"
--'  1  0  ~/build/release/esesc.conf
-|4,39,1,0,1536528371,"~/build/release/esesc.conf"
--'  1  0  ~/build/release/esesc.conf
-|4,39,1,0,1536528371,"~/build/release/esesc.conf"
--'  1  0  ~/build/release/esesc.conf
-|4,39,1,0,1536528371,"~/build/release/esesc.conf"
--'  1  0  ~/build/release/esesc.conf
-|4,39,1,0,1536528371,"~/build/release/esesc.conf"
--'  1  0  ~/build/release/esesc.conf
-|4,39,1,0,1536528371,"~/build/release/esesc.conf"
--'  1  0  ~/build/release/esesc.conf
-|4,39,1,0,1536528371,"~/build/release/esesc.conf"
--'  1  0  ~/build/release/esesc.conf
-|4,39,1,0,1536528371,"~/build/release/esesc.conf"
--'  1  0  ~/build/release/esesc.conf
-|4,39,1,0,1536528371,"~/build/release/esesc.conf"
--'  1  0  ~/build/release/esesc.conf
-|4,39,1,0,1536528371,"~/build/release/esesc.conf"
--'  1  0  ~/build/release/esesc.conf
-|4,39,1,0,1536528371,"~/build/release/esesc.conf"
--'  1  0  ~/build/release/esesc.conf
-|4,39,1,0,1536528371,"~/build/release/esesc.conf"
--'  1  0  ~/build/release/esesc.conf
-|4,39,1,0,1536528371,"~/build/release/esesc.conf"
--'  18  0  ~/build/release/run/esesc.conf
-|4,39,18,0,1536528017,"~/build/release/run/esesc.conf"
--'  18  0  ~/build/release/run/esesc.conf
-|4,39,18,0,1536528017,"~/build/release/run/esesc.conf"
--'  18  0  ~/build/release/run/esesc.conf
-|4,39,18,0,1536528017,"~/build/release/run/esesc.conf"
--'  18  0  ~/build/release/run/esesc.conf
-|4,39,18,0,1536528017,"~/build/release/run/esesc.conf"
--'  18  0  ~/build/release/run/esesc.conf
-|4,39,18,0,1536528017,"~/build/release/run/esesc.conf"
--'  18  0  ~/build/release/run/esesc.conf
-|4,39,18,0,1536528017,"~/build/release/run/esesc.conf"
--'  18  0  ~/build/release/run/esesc.conf
-|4,39,18,0,1536528017,"~/build/release/run/esesc.conf"
--'  18  0  ~/build/release/run/esesc.conf
-|4,39,18,0,1536528017,"~/build/release/run/esesc.conf"
--'  1  0  ~/build/release/run/esesc.conf
-|4,39,1,0,1536527982,"~/build/release/run/esesc.conf"
--'  1  0  ~/build/release/run/esesc.conf
-|4,39,1,0,1536527982,"~/build/release/run/esesc.conf"
--'  1  0  ~/build/release/run/esesc.conf
-|4,39,1,0,1536527982,"~/build/release/run/esesc.conf"
--'  1  0  ~/build/release/run/esesc.conf
-|4,39,1,0,1536527982,"~/build/release/run/esesc.conf"
--'  1  0  ~/build/release/run/esesc.conf
-|4,39,1,0,1536527982,"~/build/release/run/esesc.conf"
--'  1  0  ~/build/release/run/esesc.conf
-|4,39,1,0,1536527982,"~/build/release/run/esesc.conf"
--'  1  0  ~/build/release/run/esesc.conf
-|4,39,1,0,1536527982,"~/build/release/run/esesc.conf"
--'  1  0  ~/build/release/run/esesc.conf
-|4,39,1,0,1536527982,"~/build/release/run/esesc.conf"
--'  1  0  ~/build/release/run/esesc.conf
-|4,39,1,0,1536527982,"~/build/release/run/esesc.conf"
--'  1  0  ~/build/release/run/esesc.conf
-|4,39,1,0,1536527982,"~/build/release/run/esesc.conf"
--'  1  0  ~/build/release/run/esesc.conf
-|4,39,1,0,1536527982,"~/build/release/run/esesc.conf"
--'  1  0  ~/build/release/run/esesc.conf
-|4,39,1,0,1536527982,"~/build/release/run/esesc.conf"
--'  1  0  ~/build/release/run/esesc.conf
-|4,39,1,0,1536527982,"~/build/release/run/esesc.conf"
--'  1  0  ~/build/release/run/esesc.conf
-|4,39,1,0,1536527982,"~/build/release/run/esesc.conf"
--'  1  0  ~/build/release/run/esesc.conf
-|4,39,1,0,1536527982,"~/build/release/run/esesc.conf"
--'  1  0  ~/build/release/run/esesc.conf
-|4,39,1,0,1536527982,"~/build/release/run/esesc.conf"
+-'  52  0  ~/build/release/run1/sim1Script
+|4,39,52,0,1537130467,"~/build/release/run1/sim1Script"
+-'  1  0  ~/build/release/run1/sim1Script
+|4,39,1,0,1537130424,"~/build/release/run1/sim1Script"
+-'  20  20  ~/build/release/run1/sim1/simu_ooo_superscalar
+|4,39,20,20,1537062445,"~/build/release/run1/sim1/simu_ooo_superscalar"
+-'  20  20  ~/build/release/run1/sim1/simu_ooo_superscalar
+|4,39,20,20,1537062445,"~/build/release/run1/sim1/simu_ooo_superscalar"
+-'  1  0  ~/build/release/run1/sim1/simu_ooo_superscalar
+|4,39,1,0,1537062429,"~/build/release/run1/sim1/simu_ooo_superscalar"
+-'  1  0  ~/build/release/run1/sim1/simu_ooo_superscalar
+|4,39,1,0,1537062429,"~/build/release/run1/sim1/simu_ooo_superscalar"
+-'  17  0  ~/build/release/run1/sim1/simu_ooo_singleIssue
+|4,39,17,0,1537062423,"~/build/release/run1/sim1/simu_ooo_singleIssue"
+-'  17  0  ~/build/release/run1/sim1/simu_ooo_singleIssue
+|4,39,17,0,1537062423,"~/build/release/run1/sim1/simu_ooo_singleIssue"
+-'  17  0  ~/build/release/run1/sim1/simu_ooo_singleIssue
+|4,39,17,0,1537062423,"~/build/release/run1/sim1/simu_ooo_singleIssue"
+-'  17  0  ~/build/release/run1/sim1/simu_ooo_singleIssue
+|4,39,17,0,1537062423,"~/build/release/run1/sim1/simu_ooo_singleIssue"
+-'  1  0  ~/build/release/run1/sim1/simu_ooo_singleIssue
+|4,39,1,0,1537062417,"~/build/release/run1/sim1/simu_ooo_singleIssue"
+-'  1  0  ~/build/release/run1/sim1/simu_ooo_singleIssue
+|4,39,1,0,1537062417,"~/build/release/run1/sim1/simu_ooo_singleIssue"
+-'  1  0  ~/build/release/run1/sim1/simu_ooo_singleIssue
+|4,39,1,0,1537062417,"~/build/release/run1/sim1/simu_ooo_singleIssue"
+-'  1  0  ~/build/release/run1/sim1/simu_ooo_singleIssue
+|4,39,1,0,1537062417,"~/build/release/run1/sim1/simu_ooo_singleIssue"
+-'  20  20  ~/build/release/run1/sim1/simu_inorder_superscalar
+|4,39,20,20,1537062385,"~/build/release/run1/sim1/simu_inorder_superscalar"
+-'  20  20  ~/build/release/run1/sim1/simu_inorder_superscalar
+|4,39,20,20,1537062385,"~/build/release/run1/sim1/simu_inorder_superscalar"
+-'  20  20  ~/build/release/run1/sim1/simu_inorder_superscalar
+|4,39,20,20,1537062385,"~/build/release/run1/sim1/simu_inorder_superscalar"
+-'  20  20  ~/build/release/run1/sim1/simu_inorder_superscalar
+|4,39,20,20,1537062385,"~/build/release/run1/sim1/simu_inorder_superscalar"
+-'  20  20  ~/build/release/run1/sim1/simu_inorder_superscalar
+|4,39,20,20,1537062385,"~/build/release/run1/sim1/simu_inorder_superscalar"
+-'  20  20  ~/build/release/run1/sim1/simu_inorder_superscalar
+|4,39,20,20,1537062385,"~/build/release/run1/sim1/simu_inorder_superscalar"
+-'  20  20  ~/build/release/run1/sim1/simu_inorder_superscalar
+|4,39,20,20,1537062385,"~/build/release/run1/sim1/simu_inorder_superscalar"
+-'  20  20  ~/build/release/run1/sim1/simu_inorder_superscalar
+|4,39,20,20,1537062385,"~/build/release/run1/sim1/simu_inorder_superscalar"
+-'  1  0  ~/build/release/run1/sim1/simu_inorder_superscalar
+|4,39,1,0,1537062367,"~/build/release/run1/sim1/simu_inorder_superscalar"
+-'  1  0  ~/build/release/run1/sim1/simu_inorder_superscalar
+|4,39,1,0,1537062367,"~/build/release/run1/sim1/simu_inorder_superscalar"
+-'  1  0  ~/build/release/run1/sim1/simu_inorder_superscalar
+|4,39,1,0,1537062367,"~/build/release/run1/sim1/simu_inorder_superscalar"
+-'  1  0  ~/build/release/run1/sim1/simu_inorder_superscalar
+|4,39,1,0,1537062367,"~/build/release/run1/sim1/simu_inorder_superscalar"
+-'  1  0  ~/build/release/run1/sim1/simu_inorder_superscalar
+|4,39,1,0,1537062367,"~/build/release/run1/sim1/simu_inorder_superscalar"
+-'  1  0  ~/build/release/run1/sim1/simu_inorder_superscalar
+|4,39,1,0,1537062367,"~/build/release/run1/sim1/simu_inorder_superscalar"
+-'  1  0  ~/build/release/run1/sim1/simu_inorder_superscalar
+|4,39,1,0,1537062367,"~/build/release/run1/sim1/simu_inorder_superscalar"
+-'  1  0  ~/build/release/run1/sim1/simu_inorder_superscalar
+|4,39,1,0,1537062367,"~/build/release/run1/sim1/simu_inorder_superscalar"
+-'  14  20  ~/build/release/run1/sim1/simu_inorder_singleIssue
+|4,39,14,20,1537062317,"~/build/release/run1/sim1/simu_inorder_singleIssue"
+-'  14  20  ~/build/release/run1/sim1/simu_inorder_singleIssue
+|4,39,14,20,1537062317,"~/build/release/run1/sim1/simu_inorder_singleIssue"
+-'  14  20  ~/build/release/run1/sim1/simu_inorder_singleIssue
+|4,39,14,20,1537062317,"~/build/release/run1/sim1/simu_inorder_singleIssue"
+-'  14  20  ~/build/release/run1/sim1/simu_inorder_singleIssue
+|4,39,14,20,1537062317,"~/build/release/run1/sim1/simu_inorder_singleIssue"
+-'  14  20  ~/build/release/run1/sim1/simu_inorder_singleIssue
+|4,39,14,20,1537062317,"~/build/release/run1/sim1/simu_inorder_singleIssue"
+-'  14  20  ~/build/release/run1/sim1/simu_inorder_singleIssue
+|4,39,14,20,1537062317,"~/build/release/run1/sim1/simu_inorder_singleIssue"
+-'  14  20  ~/build/release/run1/sim1/simu_inorder_singleIssue
+|4,39,14,20,1537062317,"~/build/release/run1/sim1/simu_inorder_singleIssue"
+-'  14  20  ~/build/release/run1/sim1/simu_inorder_singleIssue
+|4,39,14,20,1537062317,"~/build/release/run1/sim1/simu_inorder_singleIssue"
+-'  14  20  ~/build/release/run1/sim1/simu_inorder_singleIssue
+|4,39,14,20,1537062317,"~/build/release/run1/sim1/simu_inorder_singleIssue"
+-'  14  20  ~/build/release/run1/sim1/simu_inorder_singleIssue
+|4,39,14,20,1537062317,"~/build/release/run1/sim1/simu_inorder_singleIssue"
+-'  14  20  ~/build/release/run1/sim1/simu_inorder_singleIssue
+|4,39,14,20,1537062317,"~/build/release/run1/sim1/simu_inorder_singleIssue"
+-'  14  20  ~/build/release/run1/sim1/simu_inorder_singleIssue
+|4,39,14,20,1537062317,"~/build/release/run1/sim1/simu_inorder_singleIssue"
+-'  14  20  ~/build/release/run1/sim1/simu_inorder_singleIssue
+|4,39,14,20,1537062317,"~/build/release/run1/sim1/simu_inorder_singleIssue"
+-'  14  20  ~/build/release/run1/sim1/simu_inorder_singleIssue
+|4,39,14,20,1537062317,"~/build/release/run1/sim1/simu_inorder_singleIssue"
+-'  14  20  ~/build/release/run1/sim1/simu_inorder_singleIssue
+|4,39,14,20,1537062317,"~/build/release/run1/sim1/simu_inorder_singleIssue"
+-'  14  20  ~/build/release/run1/sim1/simu_inorder_singleIssue
+|4,39,14,20,1537062317,"~/build/release/run1/sim1/simu_inorder_singleIssue"
+-'  20  20  ~/build/release/run1/sim1/simu_inorder_singleIssue
+|4,39,20,20,1537062309,"~/build/release/run1/sim1/simu_inorder_singleIssue"
+-'  20  20  ~/build/release/run1/sim1/simu_inorder_singleIssue
+|4,39,20,20,1537062309,"~/build/release/run1/sim1/simu_inorder_singleIssue"
+-'  20  20  ~/build/release/run1/sim1/simu_inorder_singleIssue
+|4,39,20,20,1537062309,"~/build/release/run1/sim1/simu_inorder_singleIssue"
+-'  20  20  ~/build/release/run1/sim1/simu_inorder_singleIssue
+|4,39,20,20,1537062309,"~/build/release/run1/sim1/simu_inorder_singleIssue"
+-'  20  20  ~/build/release/run1/sim1/simu_inorder_singleIssue
+|4,39,20,20,1537062309,"~/build/release/run1/sim1/simu_inorder_singleIssue"
+-'  20  20  ~/build/release/run1/sim1/simu_inorder_singleIssue
+|4,39,20,20,1537062309,"~/build/release/run1/sim1/simu_inorder_singleIssue"
+-'  20  20  ~/build/release/run1/sim1/simu_inorder_singleIssue
+|4,39,20,20,1537062309,"~/build/release/run1/sim1/simu_inorder_singleIssue"
+-'  20  20  ~/build/release/run1/sim1/simu_inorder_singleIssue
+|4,39,20,20,1537062309,"~/build/release/run1/sim1/simu_inorder_singleIssue"
+-'  20  20  ~/build/release/run1/sim1/simu_inorder_singleIssue
+|4,39,20,20,1537062309,"~/build/release/run1/sim1/simu_inorder_singleIssue"
+-'  20  20  ~/build/release/run1/sim1/simu_inorder_singleIssue
+|4,39,20,20,1537062309,"~/build/release/run1/sim1/simu_inorder_singleIssue"
+-'  20  20  ~/build/release/run1/sim1/simu_inorder_singleIssue
+|4,39,20,20,1537062309,"~/build/release/run1/sim1/simu_inorder_singleIssue"
+-'  20  20  ~/build/release/run1/sim1/simu_inorder_singleIssue
+|4,39,20,20,1537062309,"~/build/release/run1/sim1/simu_inorder_singleIssue"
+-'  20  20  ~/build/release/run1/sim1/simu_inorder_singleIssue
+|4,39,20,20,1537062309,"~/build/release/run1/sim1/simu_inorder_singleIssue"
+-'  20  20  ~/build/release/run1/sim1/simu_inorder_singleIssue
+|4,39,20,20,1537062309,"~/build/release/run1/sim1/simu_inorder_singleIssue"
+-'  20  20  ~/build/release/run1/sim1/simu_inorder_singleIssue
+|4,39,20,20,1537062309,"~/build/release/run1/sim1/simu_inorder_singleIssue"
+-'  20  20  ~/build/release/run1/sim1/simu_inorder_singleIssue
+|4,39,20,20,1537062309,"~/build/release/run1/sim1/simu_inorder_singleIssue"
+-'  20  20  ~/build/release/run1/sim1/simu_inorder_singleIssue
+|4,39,20,20,1537062289,"~/build/release/run1/sim1/simu_inorder_singleIssue"
+-'  20  20  ~/build/release/run1/sim1/simu_inorder_singleIssue
+|4,39,20,20,1537062289,"~/build/release/run1/sim1/simu_inorder_singleIssue"
+-'  20  20  ~/build/release/run1/sim1/simu_inorder_singleIssue
+|4,39,20,20,1537062289,"~/build/release/run1/sim1/simu_inorder_singleIssue"
+-'  20  20  ~/build/release/run1/sim1/simu_inorder_singleIssue
+|4,39,20,20,1537062289,"~/build/release/run1/sim1/simu_inorder_singleIssue"
+-'  20  20  ~/build/release/run1/sim1/simu_inorder_singleIssue
+|4,39,20,20,1537062289,"~/build/release/run1/sim1/simu_inorder_singleIssue"
+-'  20  20  ~/build/release/run1/sim1/simu_inorder_singleIssue
+|4,39,20,20,1537062289,"~/build/release/run1/sim1/simu_inorder_singleIssue"
+-'  20  20  ~/build/release/run1/sim1/simu_inorder_singleIssue
+|4,39,20,20,1537062289,"~/build/release/run1/sim1/simu_inorder_singleIssue"
+-'  20  20  ~/build/release/run1/sim1/simu_inorder_singleIssue
+|4,39,20,20,1537062289,"~/build/release/run1/sim1/simu_inorder_singleIssue"
+-'  20  20  ~/build/release/run1/sim1/simu_inorder_singleIssue
+|4,39,20,20,1537062289,"~/build/release/run1/sim1/simu_inorder_singleIssue"
+-'  20  20  ~/build/release/run1/sim1/simu_inorder_singleIssue
+|4,39,20,20,1537062289,"~/build/release/run1/sim1/simu_inorder_singleIssue"
+-'  20  20  ~/build/release/run1/sim1/simu_inorder_singleIssue
+|4,39,20,20,1537062289,"~/build/release/run1/sim1/simu_inorder_singleIssue"
+-'  20  20  ~/build/release/run1/sim1/simu_inorder_singleIssue
+|4,39,20,20,1537062289,"~/build/release/run1/sim1/simu_inorder_singleIssue"
+-'  20  20  ~/build/release/run1/sim1/simu_inorder_singleIssue
+|4,39,20,20,1537062289,"~/build/release/run1/sim1/simu_inorder_singleIssue"
+-'  20  20  ~/build/release/run1/sim1/simu_inorder_singleIssue
+|4,39,20,20,1537062289,"~/build/release/run1/sim1/simu_inorder_singleIssue"
+-'  20  20  ~/build/release/run1/sim1/simu_inorder_singleIssue
+|4,39,20,20,1537062289,"~/build/release/run1/sim1/simu_inorder_singleIssue"
+-'  20  20  ~/build/release/run1/sim1/simu_inorder_singleIssue
+|4,39,20,20,1537062289,"~/build/release/run1/sim1/simu_inorder_singleIssue"
+-'  1  0  ~/build/release/run1/sim1/simu_inorder_singleIssue
+|4,39,1,0,1537062245,"~/build/release/run1/sim1/simu_inorder_singleIssue"
+-'  1  0  ~/build/release/run1/sim1/simu_inorder_singleIssue
+|4,39,1,0,1537062245,"~/build/release/run1/sim1/simu_inorder_singleIssue"
+-'  1  0  ~/build/release/run1/sim1/simu_inorder_singleIssue
+|4,39,1,0,1537062245,"~/build/release/run1/sim1/simu_inorder_singleIssue"
+-'  1  0  ~/build/release/run1/sim1/simu_inorder_singleIssue
+|4,39,1,0,1537062245,"~/build/release/run1/sim1/simu_inorder_singleIssue"
+-'  1  0  ~/build/release/run1/sim1/simu_inorder_singleIssue
+|4,39,1,0,1537062245,"~/build/release/run1/sim1/simu_inorder_singleIssue"
+-'  1  0  ~/build/release/run1/sim1/simu_inorder_singleIssue
+|4,39,1,0,1537062245,"~/build/release/run1/sim1/simu_inorder_singleIssue"
+-'  1  0  ~/build/release/run1/sim1/simu_inorder_singleIssue
+|4,39,1,0,1537062245,"~/build/release/run1/sim1/simu_inorder_singleIssue"
+-'  1  0  ~/build/release/run1/sim1/simu_inorder_singleIssue
+|4,39,1,0,1537062245,"~/build/release/run1/sim1/simu_inorder_singleIssue"
+-'  1  0  ~/build/release/run1/sim1/simu_inorder_singleIssue
+|4,39,1,0,1537062245,"~/build/release/run1/sim1/simu_inorder_singleIssue"
+-'  1  0  ~/build/release/run1/sim1/simu_inorder_singleIssue
+|4,39,1,0,1537062245,"~/build/release/run1/sim1/simu_inorder_singleIssue"
+-'  1  0  ~/build/release/run1/sim1/simu_inorder_singleIssue
+|4,39,1,0,1537062245,"~/build/release/run1/sim1/simu_inorder_singleIssue"
+-'  1  0  ~/build/release/run1/sim1/simu_inorder_singleIssue
+|4,39,1,0,1537062245,"~/build/release/run1/sim1/simu_inorder_singleIssue"
+-'  1  0  ~/build/release/run1/sim1/simu_inorder_singleIssue
+|4,39,1,0,1537062245,"~/build/release/run1/sim1/simu_inorder_singleIssue"
+-'  1  0  ~/build/release/run1/sim1/simu_inorder_singleIssue
+|4,39,1,0,1537062245,"~/build/release/run1/sim1/simu_inorder_singleIssue"
+-'  1  0  ~/build/release/run1/sim1/simu_inorder_singleIssue
+|4,39,1,0,1537062245,"~/build/release/run1/sim1/simu_inorder_singleIssue"
+-'  1  0  ~/build/release/run1/sim1/simu_inorder_singleIssue
+|4,39,1,0,1537062245,"~/build/release/run1/sim1/simu_inorder_singleIssue"
+-'  1  0  ~/build/release/run1/sim1/simu_inorder_singleIssue
+|4,39,1,0,1537062245,"~/build/release/run1/sim1/simu_inorder_singleIssue"
+-'  1  0  ~/build/release/run1/sim1/simu_inorder_singleIssue
+|4,39,1,0,1537062245,"~/build/release/run1/sim1/simu_inorder_singleIssue"
+-'  1  0  ~/build/release/run1/sim1/simu_inorder_singleIssue
+|4,39,1,0,1537062245,"~/build/release/run1/sim1/simu_inorder_singleIssue"
+-'  1  0  ~/build/release/run1/sim1/simu_inorder_singleIssue
+|4,39,1,0,1537062245,"~/build/release/run1/sim1/simu_inorder_singleIssue"
+-'  1  0  ~/build/release/run1/sim1/simu_inorder_singleIssue
+|4,39,1,0,1537062245,"~/build/release/run1/sim1/simu_inorder_singleIssue"
+-'  1  0  ~/build/release/run1/sim1/simu_inorder_singleIssue
+|4,39,1,0,1537062245,"~/build/release/run1/sim1/simu_inorder_singleIssue"
 
 # History of marks within files (newest to oldest):
 
-> ~/wsu001
-	*	1537023312	0
-	"	60	6
+> ~/build/release/run1/sim1Script
+	*	1537130450	0
+	"	52	0
+
+> ~/build/release/run1/sim1/simu_ooo_superscalar
+	*	1537062443	0
+	"	20	20
+	^	20	21
+	.	20	20
+	+	14	20
+	+	19	20
+	+	20	20
+
+> ~/build/release/run1/sim1/simu_ooo_singleIssue
+	*	1537062420	0
+	"	17	0
+
+> ~/build/release/run1/sim1/simu_inorder_superscalar
+	*	1537062383	0
+	"	20	20
+	^	20	21
+	.	20	20
+	+	1	1
+	+	12	27
+	+	14	20
+	+	19	20
+	+	20	20
+
+> ~/build/release/run1/sim1/simu_inorder_singleIssue
+	*	1537062316	0
+	"	14	20
+	^	14	21
+	.	14	20
+	+	12	27
+	+	14	20
+	+	19	20
+	+	20	20
+	+	19	20
+	+	14	20
+
+> ~/build/release/run1/sim1/conf_crafty
+	*	1537061892	0
+	"	19	0
+	^	19	1
+	.	19	0
+	+	2	5
+	+	18	0
+	+	19	0
+
+> ~/build/release/run1/sim1/conf_sjeng
+	*	1537061868	0
+	"	19	0
+
+> ~/build/release/run1/simu.conf.apache
+	*	1537051376	0
+	"	12	23
+	^	13	0
+	.	12	24
+	+	12	23
+	+	14	20
+	+	20	20
+	+	21	20
+	+	12	27
+	+	20	20
+	+	21	20
+	+	12	27
+	+	15	20
+	+	20	20
+	+	21	20
+	+	12	24
+
+> ~/build/release/run1/esesc.conf
+	*	1537043140	0
+	"	39	33
+	^	41	34
+	.	41	33
+	+	17	0
+	+	18	1
+	+	41	28
+	+	18	0
+	+	19	0
+	+	41	40
+	+	19	0
+	+	18	0
+	+	41	24
+	+	18	0
+	+	19	0
+	+	41	33
+
+> ~/build/release/run1/sim.conf.apache
+	*	1537036487	0
+	"	1	0
 
 > ~/build/release/run/esesc.conf
-	*	1536531804	0
-	"	61	0
-	^	18	2
-	.	18	1
+	*	1537029039	0
+	"	41	26
+	^	41	27
+	.	41	26
 	+	17	0
 	+	19	0
 	+	17	1
 	+	18	1
+	+	41	26
+
+> ~/.git/COMMIT_EDITMSG
+	*	1537024749	0
+	"	1	0
+	^	1	0
+	.	1	0
+	+	1	0
+
+> ~/wsu001
+	*	1537023312	0
+	"	60	6
 
 > ~/build/release/run/report0.txt
 	*	1536529856	0

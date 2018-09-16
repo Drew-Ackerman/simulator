@@ -1,0 +1,6 @@
+Sampler: inst, R:2000000, W:0, D:100000, T:300000
+Sampler: inst, nInstMax:10000000000, nInstSkip:1, maxnsTime:1000000000000
+
+Sjeng version SPEC 1.0, Copyright (C) 2000-2005 Gian-Carlo Pascutto
+
+SPEC Workload

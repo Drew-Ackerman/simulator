@@ -1,0 +1,957 @@
+#BEGIN Configuration used. Extracted from "esesc.conf":
+technology='ThisSOCTech'
+reportFile='crafty_inorder_single_pipe'
+cpusimu[0]='tradCORE'
+cpuemul[0]='QEMUSectionCPU'
+pwrmodel  ='McPatPwrCounters'
+live_group=1
+live      =false
+[TASS]
+ROIOnly   =false
+doPowPrediction=1
+PowPredictionHist=5
+nInstTiming=3.000000e+05
+nInstDetail=1.000000e+05
+nInstWarmup=0
+nInstRabbit=2.000000e+06
+nInstMax  =1.000000e+10
+maxnsTime =1.000000e+12
+nInstSkip =1
+type      ='inst'
+[NoSyscall]
+runtime   =false
+generate  =false
+enable    =false
+[QEMUSectionCPU]
+params[0] ='./mips64/spec00_crafty.mips64'
+sampler   ='TASS'
+dorun     =true
+type      ='qemu'
+syscall   ='NoSyscall'
+[ThisSOCTech]
+frequency =1.700000e+09
+[McPatPwrCounters]
+doPower   =false
+[BigMem]
+hitDelay  =60
+bsize     =64
+coldWarmup=false
+deviceType='niceCache'
+[Shared_TLB]
+lowerLevel='voidDevice'
+replPolicy='LRU'
+maxRequests=2
+assoc     =4
+size      =2097152
+hitDelay  =1
+deviceType='tlb'
+bsize     =4096
+numPorts  =0
+[PrivL2]
+lowerLevel="BigMem Memory"
+hitDelay  =26
+bkPortOccp=1
+bkNumPorts=1
+replPolicy='LRU'
+bsize     =32
+size      =2097152
+sendFillPortOccp=2
+numBanks  =1
+directory =true
+inclusive =true
+deviceType='cache'
+assoc     =16
+missDelay =26
+sendFillNumPorts=1
+maxRequests=32
+[DL1_core]
+bkPortOccp=1
+bkNumPorts=1
+size      =65536
+sendFillNumPorts=1
+numBanks  =1
+directory =false
+inclusive =true
+deviceType='cache'
+replPolicy='LRU'
+maxRequests=8
+lowerLevel="PrivL2 L2 sharedby 2"
+hitDelay  =4
+sendFillPortOccp=0
+bsize     =32
+skew      =false
+missDelay =4
+bankShift =4
+assoc     =4
+[PerCore_ITLB]
+lowerTLB_delay=20
+lowerTLB  ="Shared_TLB STLB shared"
+lowerLevel="IL1_core IL1"
+replPolicy='LRU'
+bsize     =16384
+maxRequests=4
+assoc     =16
+size      =262144
+hitDelay  =0
+numPorts  =0
+deviceType='tlb'
+[PerCore_DTLB]
+replPolicy='LRU'
+maxRequests=8
+assoc     =16
+size      =262144
+numPorts  =0
+lowerTLB_delay=20
+lowerTLB  ="Shared_TLB STLB shared"
+hitDelay  =0
+bsize     =16384
+lowerLevel="DL1_core DL1"
+deviceType='tlb'
+[IL1_core]
+missDelay =1
+replPolicy='LRU'
+bsize     =32
+assoc     =4
+maxRequests=32
+numBanks  =1
+deviceType='icache'
+bkNumPorts=1
+bkPortOccp=1
+inclusive =true
+directory =false
+lowerLevel="PrivL2 L2 sharedby 1"
+hitDelay  =2
+size      =32768
+[voidDevice]
+deviceType='void'
+[BPredIssueX2]
+btbHistorySize=9
+btbicache =true
+btbBsize  =1
+l2size    =2048
+l1size    =1
+BTACDelay =1
+addrShift =1
+type      ='2level'
+useDolc   =true
+historySize=9
+l2Bits    =2
+btbSize   =512
+btbAssoc  =4
+btbReplPolicy='LRU'
+[BPredIssueX]
+btbHistorySize=9
+btbAssoc  =32
+btbBsize  =1
+historySize=9
+l2size    =2048
+l1size    =1
+BTACDelay =4
+rasPrefetch=0
+rasSize   =8
+btbSize   =64
+addrShift =1
+l2Bits    =2
+btbReplPolicy='RANDOM'
+type      ='2level'
+[CUNIT_CALU]
+Occ       =1
+Num       =2
+[MUNIT_CALU]
+Num       =1
+Occ       =1
+[MUNIT_BALU]
+Occ       =1
+Num       =1
+[MUNIT_AALU]
+Occ       =1
+Num       =1
+[AUNIT_AALU]
+Occ       =1
+Num       =1
+[CUNIT]
+iCALU_FPALUUnit='CUNIT_CALU'
+iCALU_FPALULat=4
+iCALU_FPDIVUnit='CUNIT_CALU'
+iCALU_FPDIVLat=28
+iCALU_FPMULTUnit='CUNIT_CALU'
+iCALU_FPMULTLat=7
+schedPortOccp=1
+winSize   =32
+nRegs     =32
+recycleAt ='retire'
+schedNumPorts=2
+schedDelay=0
+[MUNIT]
+iCALU_DIVLat=8
+iCALU_MULTUnit='MUNIT_CALU'
+iCALU_MULTLat=5
+iLALU_LDUnit='MUNIT_MALU'
+iLALU_LDLat=0
+iSALU_LLLat=0
+iSALU_STUnit='MUNIT_MALU'
+iBALU_RETUnit='MUNIT_BALU'
+iBALU_RCALLUnit='MUNIT_BALU'
+iBALU_RCALLLat=4
+iBALU_RJUMPUnit='MUNIT_BALU'
+iSALU_STLat=0
+iBALU_RBRANCHUnit='MUNIT_BALU'
+iBALU_LCALLUnit='MUNIT_BALU'
+iBALU_LCALLLat=4
+iBALU_LBRANCHUnit='MUNIT_BALU'
+recycleAt ='execute'
+nRegs     =1024
+iBALU_LJUMPUnit='MUNIT_BALU'
+iSALU_ADDRUnit='MUNIT_SALU'
+iBALU_LJUMPLat=4
+iAALULat  =1
+schedNumPorts=3
+iAALUUnit ='MUNIT_AALU'
+iBALU_RETLat=4
+iSALU_SCLat=0
+iSALU_SCUnit='MUNIT_MALU'
+iSALU_ADDRLat=0
+iBALU_RBRANCHLat=4
+iBALU_LBRANCHLat=4
+winSize   =16
+iBALU_RJUMPLat=4
+schedPortOccp=1
+schedDelay=0
+iCALU_DIVUnit='MUNIT_CALU'
+iSALU_LLUnit='MUNIT_MALU'
+[AUNIT]
+iRALULat  =1
+schedPortOccp=1
+iAALUUnit ='AUNIT_AALU'
+nRegs     =1024
+schedNumPorts=1
+recycleAt ='execute'
+winSize   =16
+iRALUUnit ='AUNIT_AALU'
+iAALULat  =1
+schedDelay=0
+[PrefetchEngine]
+minDistance=0
+maxPrefetch=0
+type      ='void'
+pfStride  =1
+[tradCORE]
+nTotalRegs=40
+scbSize   =8
+StoreSetSize=8192
+enableICache=true
+IL1       ="PerCore_ITLB ITLB"
+DL1       ="PerCore_DTLB PTLB"
+prefetcher='PrefetchEngine'
+maxLoads  =24
+robSize   =64
+bpred2    ='BPredIssueX2'
+maxStores =24
+interClusterLat=0
+stForwardDelay=4
+maxIRequests=3
+cluster[0]='AUNIT'
+cluster[2]='CUNIT'
+cluster[1]='MUNIT'
+bpredDelay=2
+bb4Cycle  =1
+maxBranches=32
+retireDelay=3
+drainOnMiss=true
+clusterScheduler='RoundRobin'
+retireWidth=1
+enableDCache=true
+issueWidth=1
+type      ='ooo'
+bpred     ='BPredIssueX'
+throttlingRatio=1.000000e+00
+decodeDelay=4
+fetchWidth=4
+alignedFetch=true
+MemoryReplay=false
+renameDelay=4
+instQueueSize=24
+[MUNIT_MALU]
+Occ       =1
+Num       =1
+[MUNIT_SALU]
+Num       =1
+Occ       =1
+#END Configuration used. Extracted from "esesc.conf":
+OSSim:reportName=done
+OSSim:beginTime=Sat Sep 15 18:37:16 2018
+
+OSSim:endTime=Sat Sep 15 18:58:16 2018
+
+OSSim:nCPUs=1
+OSSim:P(0)_Sampler=0
+OSSim:P(0)_Type=0
+OSSim:nSampler=1
+OSSim:globalClock=2988400330
+OSSim:msecs= 1260.20
+#BEGIN GStats::report done
+progressedTime:max=10451315344.000000:n=10
+P(0)_ipc:n=4167::v=56.870718
+S(0):globalClock_Timing=2221043933.000000
+S(0):DetailInst=416695836.000000
+S(0):RabbitInst=8333204166.000000
+S(0):TimingTime=937912708.000000
+S(0):WarmupTime=0.000000
+S(0):RabbitTime=114575449.000000
+S(0):InitTime=0.000000
+S(0):nSwitches=12534.000000
+P(0)_CUNIT2_15_avgRetireTime:n=38::v=21.921053
+P(0)_CUNIT2_15_avgIssueTime:n=38::v=11.500000
+P(0)_CUNIT2_CUNIT_CALU_occ:n=38::v=0.000000
+P(0)_CUNIT2_winNotUsed:n=38::v=30.157895
+P(0)_CUNIT2_sched_occ:n=38::v=0.000000
+S(0):TimingInst=1250100001.000000
+P(0)_CUNIT2_wrForwardBus=10.000000
+P(0)_MUNIT1_18_avgRetireTime:n=7789889::v=16.391012
+P(0)_MUNIT1_18_avgExecuteTime:n=7789889::v=5.337995
+P(0)_MUNIT1_MUNIT_CALU_occ:n=7789889::v=0.337985
+P(0)_MUNIT1_iSALU_ADDR:stldViolations=0.000000
+P(0)_MUNIT1_14_avgRetireTime:n=0::v=-nan
+P(0)_MUNIT1_14_avgExecuteTime:n=0::v=-nan
+P(0)_MUNIT1_14_avgIssueTime:n=0::v=-nan
+P(0)_MUNIT1_14_avgRenameTime:n=0::v=-nan
+P(0)_CUNIT2_15_avgRenameTime:n=38::v=84.236842
+P(0)_MUNIT1_11_avgRetireTime:n=114322170::v=8.934935
+P(0)_MUNIT1_11_avgExecuteTime:n=114322170::v=0.001721
+P(0)_MUNIT1_11_avgIssueTime:n=114322170::v=0.705666
+P(0)_MUNIT1_specld:stldViolations=0.000000
+P(0)_MUNIT1_10_avgRetireTime:n=381211466::v=18.115597
+P(0)_MUNIT1_MUNIT_SALU_occ:n=0::v=-nan
+P(0)_MUNIT1_10_avgExecuteTime:n=381211466::v=6.521248
+P(0)_MUNIT1_10_avgRenameTime:n=381211466::v=51750247.079382
+P(0)_MUNIT1_MUNIT_MALU_occ:n=495533645::v=0.059297
+P(0)_MUNIT1_3_avgExecuteTime:n=150409770::v=4.032001
+P(0)_MUNIT1_3_avgIssueTime:n=150409770::v=3.832302
+P(0)_MUNIT1_3_avgRenameTime:n=150409770::v=35.711844
+P(0)_MUNIT1_MUNIT_BALU_occ:n=150409770::v=0.031419
+P(0)_MUNIT1_2_avgExecuteTime:n=298170577::v=1.072635
+P(0)_MUNIT1_wrRegPool=701143352.000000
+P(0)_MUNIT1_rdRegPool=1903807782.000000
+P(0)_MUNIT1_winNotUsed:n=951903872::v=13.224909
+P(0)_MUNIT1_sched_occ:n=951903889::v=0.000873
+P(0)_AUNIT0_imemoryBarrier=0.000000
+P(0)_AUNIT0_dmemoryBarrier=83.000000
+P(0)_AUNIT0_1_avgRetireTime:n=298170786::v=21.668796
+P(0)_AUNIT0_AUNIT_AALU_occ:n=298170794::v=0.000000
+P(0)_AUNIT0_rdRegPool=596341592.000000
+P(0)_AUNIT0_wrForwardBus=65635257.000000
+P(0):stldForwarding=3998978.000000
+P(0)_BPred2_BTB:_trackerDown4n=0.000000
+P(0)_BPred2_BTB:_trackerDown2n=0.000000
+P(0)_BPred2_BTB:_trackerDown4=0.000000
+P(0)_BPred2_BTB:_trackerDown2=0.000000
+P(0)_BPred2_BTB:_trackerUp1n=0.000000
+P(0)_BPred2_BTB:_trackerUp1=0.000000
+P(0)_BPred2_BTB:_trackerMore=0.000000
+P(0)_BPred2_BTB:_tracker10=0.000000
+P(0)_BPred2_BTB:_trackerZero=0.000000
+P(0)_BPred2_BTB:_tracker7=0.000000
+P(0)_BPred2_BTB:_trackerDown1=0.000000
+P(0)_BPred2_BTB:_tracker3=0.000000
+P(0)_BPred2_BTB:_tracker2=0.000000
+P(0)_BPred2_BTB:_tracker4=0.000000
+P(0)_BPred2_BTB:_tracker1=0.000000
+P(0)_BPred2_BTB:nHit=8979470.000000
+P(0)_BPred2_BTB:_tracker9=0.000000
+P(0)_BPred2_2level:nHit=100311963.000000
+P(0)_BPred_BTB:_trackerDown3n=0.000000
+P(0)_BPred_BTB:_trackerDown2n=0.000000
+P(0)_BPred_BTB:_trackerDown1n=0.000000
+P(0)_BPred_BTB:_trackerDown4=0.000000
+P(0)_BPred_BTB:_trackerDown3=0.000000
+P(0)_BPred_BTB:_trackerDown2=0.000000
+P(0)_BPred_BTB:_trackerDown1=0.000000
+P(0)_BPred_BTB:_trackerUp1n=0.000000
+P(0)_BPred_BTB:_trackerUp1=0.000000
+P(0)_BPred_BTB:_tracker15=0.000000
+P(0)_BPred_BTB:_tracker13=0.000000
+P(0)_BPred_BTB:_tracker12=0.000000
+P(0)_BPred_BTB:_tracker10=0.000000
+S(0):WarmupInst=0.000000
+P(0)_BPred_BTB:_tracker8=0.000000
+P(0)_uipc:n=4167::v=56.864539
+P(0)_BPred_BTB:_tracker6=0.000000
+P(0)_BPred_BTB:_tracker3=0.000000
+P(0)_BPred_BTB:_tracker2=0.000000
+P(0)_BPred_BTB:_tracker0=0.000000
+P(0)_BPred_BTB:nHitLabel=0.000000
+P(0)_BPred_RAS:nMiss=3290915.000000
+P(0)_BPred:nAgree3=73945855.000000
+P(0)_BPred:nUnFixes=18931640.000000
+P(0)_BPred:nFixes2=0.000000
+P(0)_BPred:nMiss3=0.000000
+P(0)_avgPNRHitLoadSpec:n=1298422141::v=0.890304
+P(0)_BPred:nBranches2=136166357.000000
+P(0)_BPred:nMiss=69326000.000000
+P(0)_AUNIT0_1_avgExecuteTime:n=298170786::v=1.071568
+P(0)_BPred2_BTB:_tracker12=0.000000
+P(0)_BPred:nBTAC=10022294.000000
+P(0)_zeroDinst:nBTAC=0.000000
+P(0)_FetchEngine:nDelayInst1=1037908857.000000
+P(0)_FetchEngine_avgFetched:n=384103993::v=3.254514
+P(0)_BPred_BTB:_trackerDown4n=0.000000
+P(0)_FetchEngine_avgFetchTime:n=96076428::v=119.066224
+P(0)_FetchEngine_avgBranchTime:n=18931640::v=54.824033
+P(0)_FetchEngine_avgFetchLost:n=384103993::v=0.545230
+P(0)_ExeEngine_iCALU_DIV:n=4.000000
+P(0)_ExeEngine_iSALU_LL:n=0.000000
+P(0)_ExeEngine_iBALU_RCALL:n=12994380.000000
+P(0)_BPred:nBranches=136166357.000000
+P(0)_BPred2_BTB:_trackerDown3=0.000000
+P(0)_ExeEngine_iBALU_LCALL:n=1178440.000000
+P(0)_ExeEngine_iBALU_RBRANCH:n=0.000000
+P(0)_ExeEngine_iBALU_LBRANCH:n=111669354.000000
+P(0)_ExeEngine_iSubInvalid:n=0.000000
+P(0)_ExeEngine:nReplaysStall=0.000000
+P(0)_ExeEngine:nSmallWinStall=4306037.000000
+P(0)_avgFetchWidth:n=384103993::v=3.254514
+OS:wallClock=2216052837.000000
+P(0):noFetch2=1273597119.000000
+P(0):noFetch=558360508.000000
+PTLB(0)_TLB_trackerDown4n=0.000000
+PTLB(0)_TLB_trackerDown3n=0.000000
+PTLB(0)_TLB_trackerDown2=0.000000
+PTLB(0)_TLB_trackerDown1=0.000000
+P(0)_FetchEngine:nDelayInst2=56686171.000000
+PTLB(0)_TLB_trackerUp1n=0.000000
+PTLB(0)_TLB_trackerDown3=0.000000
+P(0)_BPred2_2level:nMiss=11357396.000000
+PTLB(0)_TLB_trackerUp1=0.000000
+PTLB(0)_TLB_trackerMore=0.000000
+PTLB(0)_TLB_tracker13=0.000000
+P(0)_BPred_BTB:_trackerOne=0.000000
+PTLB(0)_TLB_tracker12=0.000000
+PTLB(0)_TLB_tracker10=0.000000
+PTLB(0)_TLB_tracker9=0.000000
+PTLB(0)_TLB_tracker8=0.000000
+PTLB(0)_TLB_trackerDown4=0.000000
+PTLB(0)_TLB_tracker4=0.000000
+PTLB(0)_TLB_tracker2=0.000000
+PTLB(0)_TLB_tracker1=0.000000
+DL1(0)p_MSHR_avgSubUse:n=0::v=-nan
+DL1(0)p_MSHR_avgUse:n=0::v=-nan
+DL1(0)_MSHR:nStallConflict=303448.000000
+DL1(0)_MSHR_avgUse:n=495551540::v=1.023641
+DL1(0)_trackerDown4n=0.000000
+DL1(0)_trackerDown1=0.000000
+P(0)_ExeEngine_iCALU_MULT:n=7789885.000000
+P(0)_AUNIT0_wrRegPool=298170713.000000
+DL1(0)_trackerUp1=0.000000
+DL1(0)_trackerMore=0.000000
+DL1(0)_trackerTwo=0.000000
+P(0)_ExeEngine:nDivergeStall=0.000000
+DL1(0)_trackerOne=0.000000
+DL1(0)_tracker14=0.000000
+P(0)_BPred:nTaken2=70856161.000000
+DL1(0)_tracker13=0.000000
+DL1(0)_tracker12=0.000000
+DL1(0)_tracker11=0.000000
+DL1(0)_tracker10=0.000000
+DL1(0)_tracker9=0.000000
+DL1(0)_tracker8=0.000000
+DL1(0)_tracker7=0.000000
+DL1(0)_tracker5=0.000000
+DL1(0)_tracker2=0.000000
+DL1(0)_tracker0=0.000000
+DL1(0):MMUSetState=0.000000
+P(0)_MUNIT1_18_avgIssueTime:n=7789889::v=7.416486
+DL1(0):setExclusiveSetState=0.000000
+DL1(0):setSharedSetState=10.000000
+DL1(0):setDirtySetState=0.000000
+DL1(0)_trackerUp1n=0.000000
+DL1(0):setValidSetState=0.000000
+DL1(0):setInvalidSetState=104307.000000
+DL1(0):VPCMUHalfMiss=0.000000
+DL1(0):setExclusiveHalfMiss=0.000000
+DL1(0):setSharedHalfMiss=0.000000
+DL1(0):writeHalfMiss=41913.000000
+DL1(0):setInvalidHalfMiss=0.000000
+P(0)_BPred2_BTB:_tracker8=0.000000
+P(0)_BPred_BTB:_trackerMore=0.000000
+DL1(0):VPCMUMissState=0.000000
+DL1(0)_tracker6=0.000000
+DL1(0):MMUMissState=0.000000
+DL1(0):setExclusiveMissState=0.000000
+DL1(0):writeMissState=0.000000
+DL1(0):MMUMiss=0.000000
+DL1(0):setValidAck=0.000000
+DL1(0):setExclusiveMiss=0.000000
+DL1(0):MMUAck=0.000000
+DL1(0):readMiss=1806149.000000
+PTLB(0)_TLB_trackerOne=0.000000
+P(0)_BPred_2level:nHit=63798337.000000
+DL1(0):setInvalidMiss=0.000000
+DL1(0):setSharedHit=0.000000
+DL1(0):writeHit=114234349.000000
+DL1(0):readHit=379277096.000000
+DL1(0):writeExclusive=0.000000
+DL1(0):nPrefetchDropped=0.000000
+DL1(0):nPrefetchHitPending=0.000000
+DL1(0)_invalidateMiss=0.000000
+DL1(0)_invalidateHit=0.000000
+P(0)_ExeEngine:nOutsBranchesStall=0.000000
+DL1(0)_capInvalidateMiss=0.000000
+DL1(0)_capInvalidateHit=0.000000
+DL1(0)_avgSnoopLat:n=104317::v=1.001217
+DL1(0)_avgHalfMemLat:n=188038::v=61.525048
+P(0)_ExeEngine_iCALU_FPDIV:n=0.000000
+P(0)_BPred_BTB:_tracker14=0.000000
+DL1(0)_avgMemLat:n=495551540::v=6.234264
+DL1(0):lineFill=1852057.000000
+DL1(0):invOne=0.000000
+DL1(0):displacedRecv=0.000000
+DL1(0):setInvalidMissState=0.000000
+DL1(0):nSendPrefetch=0.000000
+DL1(0):setSharedMiss=0.000000
+P(0)_BPred:nFixes3=0.000000
+DL1(0):nTryPrefetch=0.000000
+P(0)_ExeEngine_iSALU_SC:n=34.000000
+DL1(0)_tracker3=0.000000
+PTLB(0)_avgMemLat:n=495533642::v=6.233158
+PTLB(0):readHit=475694694.000000
+STLB(0)_TLB_trackerDown4n=0.000000
+STLB(0)_TLB_trackerDown3n=0.000000
+STLB(0)_TLB_trackerDown2n=0.000000
+STLB(0)_TLB_trackerDown1n=0.000000
+STLB(0)_TLB_trackerDown4=0.000000
+STLB(0)_TLB_trackerDown2=0.000000
+P(0)_BPred2_BTB:_tracker0=0.000000
+STLB(0)_TLB_trackerDown1=0.000000
+STLB(0)_TLB_trackerUp1n=0.000000
+DL1(0)_avgPrefetchLat:n=0::v=-nan
+P(0)_ExeEngine_iBALU_RET:n=14243421.000000
+STLB(0)_TLB_trackerOne=0.000000
+STLB(0)_TLB_tracker14=0.000000
+STLB(0)_TLB_tracker13=0.000000
+STLB(0)_TLB_tracker12=0.000000
+P(0)_ExeEngine_iBALU_LJUMP:n=10055758.000000
+DL1(0):VPCMUMiss=0.000000
+STLB(0)_TLB_tracker11=0.000000
+STLB(0)_TLB_tracker10=0.000000
+DL1(0):setSharedAck=4.000000
+P(0)_BPred_2level:nMiss=13244083.000000
+STLB(0)_TLB_tracker9=0.000000
+DL1(0):setInvalidHit=0.000000
+STLB(0)_TLB_tracker6=0.000000
+STLB(0)_TLB_tracker7=0.000000
+STLB(0)_TLB_tracker5=0.000000
+STLB(0)_TLB_tracker15=0.000000
+P(0)_ExeEngine:nSyscallStall=0.000000
+STLB(0)_TLB_tracker4=0.000000
+DL1(0):setInvalidAck=0.000000
+STLB(0)_TLB_tracker3=0.000000
+DL1(0):nPrefetchUseful=0.000000
+P(0)_FetchEngine:nDelayInst3=172164766.000000
+STLB(0)_TLB_tracker2=0.000000
+STLB(0)_TLB_tracker1=0.000000
+STLB(0):LowerTLBMiss=0.000000
+STLB(0):LowerTLBHit=0.000000
+P(0)_ExeEngine:nSmallROBStall=1493853.000000
+STLB(0):readMiss=0.000000
+ITLB(0)_TLB_trackerDown4n=0.000000
+ITLB(0)_TLB_trackerDown2n=0.000000
+P(0)_pref_avgPrefetchNum:n=0::v=-nan
+ITLB(0)_TLB_trackerDown1n=0.000000
+PTLB(0)_avgMissLat:n=5966::v=2.000000
+ITLB(0)_TLB_tracker13=0.000000
+ITLB(0)_TLB_tracker12=0.000000
+ITLB(0)_TLB_tracker10=0.000000
+ITLB(0)_TLB_tracker7=0.000000
+PTLB(0)_TLB_trackerTwo=0.000000
+ITLB(0)_TLB_tracker6=0.000000
+ITLB(0)_TLB_tracker2=0.000000
+DL1(0):VPCMUSetState=0.000000
+P(0)_ExeEngine_iAALU:n=596341191.000000
+ITLB(0)_TLB_tracker1=0.000000
+P(0)_MUNIT1_3_avgRetireTime:n=150409770::v=17.536391
+IL1(0)_bk(0)_occ:n=397403943::v=0.011667
+ITLB(0)_TLB_trackerZero=0.000000
+P(0)_AUNIT0_1_avgRenameTime:n=298170786::v=66128134.560403
+DL1(0):writeMiss=45908.000000
+L2(0)_sendFill_occ:n=8501975::v=0.045788
+ITLB(0)_TLB_trackerDown3n=0.000000
+Memory(0)_avgMemLat:n=8369581::v=60.000000
+Memory(0):writeHalfMiss=0.000000
+ITLB(0)_TLB_trackerUp1=0.000000
+Memory(0):readHalfMiss=0.000000
+ITLB(0)_TLB_tracker4=0.000000
+P(0)_robUsed:n=1298422141::v=8.171236
+Memory(0):pushDownHit=0.000000
+L2(0)p_MSHR:nStallConflict=0.000000
+L2(0)p_MSHR_avgUse:n=0::v=-nan
+L2(0)_MSHR:nStallConflict=18.000000
+L2(0)_MSHR_avgSubUse:n=8501975::v=1.000001
+L2(0)_trackerDown4n=0.000000
+L2(0)_trackerDown3n=0.000000
+L2(0)_trackerDown1n=0.000000
+DL1(0):writeBack=221017.000000
+L2(0)_trackerDown4=0.000000
+L2(0)_trackerDown1=0.000000
+P(0)_ExeEngine_iRALU:n=191.000000
+L2(0)_trackerMore=0.000000
+L2(0)_trackerOne=0.000000
+L2(0)_tracker13=0.000000
+L2(0)_tracker12=0.000000
+L2(0)_tracker10=0.000000
+P(0)_ExeEngine_iLALU_LD:n=381211475.000000
+L2(0)_tracker6=0.000000
+PTLB(0):readMiss=19840776.000000
+L2(0)_tracker4=0.000000
+L2(0)_tracker3=0.000000
+L2(0)_tracker2=0.000000
+P(0):nCommitted=1250074696.000000
+ITLB(0)_TLB_trackerUp1n=0.000000
+ITLB(0)_TLB_trackerTwo=0.000000
+L2(0)_tracker1=0.000000
+ITLB(0)_TLB_tracker3=0.000000
+L2(0)_bk(0)_occ:n=25265166::v=0.010610
+L2(0)_tracker15=0.000000
+L2(0):setInvalidSetState=0.000000
+DL1(0)_trackerDown2=0.000000
+L2(0):MMUAck=0.000000
+L2(0):setExclusiveAck=8369581.000000
+DL1(0)_trackerDown2n=0.000000
+P(0)_MUNIT1_10_avgIssueTime:n=381211466::v=0.559713
+P(0)_BPred2_BTB:nHitLabel=52864502.000000
+L2(0):setSharedAck=0.000000
+L2(0)_trackerUp1=0.000000
+DL1(0)_bk(0)_occ:n=502959768::v=0.110201
+P(0)_MUNIT1_iSALU_ST:stldViolations=68930.000000
+P(0)_BPred_BTB:nMiss=54918687.000000
+L2(0):setValidAck=0.000000
+L2(0):MMUHalfMiss=0.000000
+DL1(0)_avgMissLat:n=1852057::v=101.629016
+P(0)_BPred2_BTB:_tracker13=0.000000
+DL1(0):readMissState=0.000000
+PTLB(0)_TLB_tracker3=0.000000
+P(0)_avgPNRMissLoadSpec(0)=1298422141.000000
+P(0)_avgPNRMissLoadSpec:max=0
+P(0)_avgPNRMissLoadSpec:v=0.000000
+P(0)_avgPNRMissLoadSpec:n=1298422141.000000
+L2(0):VPCMUSetState=0.000000
+L2(0):writeHalfMiss=0.000000
+L2(0)_tracker5=0.000000
+DL1(0):VPCMUHit=0.000000
+P(0)_AUNIT0_sched_occ:n=298170794::v=0.071568
+L2(0):VPCMUMissState=0.000000
+ITLB(0)_TLB_tracker8=0.000000
+DL1(0):nPrefetchHitBusy=0.000000
+P(0)_ExeEngine_iBALU_RJUMP:n=268418.000000
+L2(0):setExclusiveMissState=0.000000
+L2(0)_trackerDown3=0.000000
+L2(0):setExclusiveHalfMiss=0.000000
+PTLB(0)_TLB_tracker0=0.000000
+P(0)_BPred2_BTB:_tracker15=0.000000
+L2(0):setSharedMissState=0.000000
+ITLB(0)_TLB_tracker15=0.000000
+DL1(0)_tracker1=0.000000
+L2(0):writeMissState=0.000000
+P(0):nFreeze=0.000000
+L2(0):MMUMiss=0.000000
+DL1(0):MMUHit=0.000000
+DL1(0):readHalfMiss=146125.000000
+L2(0):writeMiss=0.000000
+DL1(0)_MSHR_avgSubUse:n=495551540::v=1.000679
+P(0)_BPred2_BTB:_trackerDown1n=0.000000
+L2(0):MMUHit=0.000000
+L2(0):setExclusiveSetState=0.000000
+L2(0):setExclusiveHit=32469.000000
+DL1(0)_sendFill_occ:n=495551540::v=0.000000
+L2(0):writeHit=0.000000
+L2(0):writeExclusive=0.000000
+STLB(0)_TLB_trackerUp1=0.000000
+L2(0):readHalfMiss=12.000000
+L2(0):nPrefetchDropped=0.000000
+L2(0):nPrefetchHitBusy=0.000000
+L2(0):nPrefetchRedundant=0.000000
+L2(0):nPrefetchLineFill=0.000000
+P(0)_ExeEngine:nOutsStoresStall=234503.000000
+L2(0):nPrefetchWasteful=0.000000
+PTLB(0):LowerTLBMiss=7791.000000
+ITLB(0)_TLB_trackerDown1=0.000000
+L2(0):nPrefetchUseful=0.000000
+P(0)_BPred_BTB:_tracker1=0.000000
+ITLB(0)_TLB_trackerMore=0.000000
+L2(0)_avgPrefetchLat:n=0::v=-nan
+PTLB(0)_TLB_tracker11=0.000000
+ITLB(0)_TLB_tracker14=0.000000
+L2(0)_invalidateHit=0.000000
+Memory(0):writeHit=201738.000000
+L2(0)_avgMemLat:n=8501975::v=90.390207
+L2(0)_avgMissLat:n=8369581::v=91.147688
+L2(0):lineFill=8369581.000000
+P(0)_AUNIT0_winNotUsed:n=298170786::v=15.332136
+STLB(0)_TLB_tracker8=0.000000
+Memory(0):writeExclusive=0.000000
+L2(0):invAll=0.000000
+L2(0):displacedSend=201738.000000
+DL1(0)_trackerZero=0.000000
+L2(0):VPCMUHalfMiss=0.000000
+IL1(0)p_MSHR_avgUse:n=0::v=-nan
+CmdSTLB(0)_occ:n=0::v=-nan
+IL1(0)_MSHR_avgUse:n=384104107::v=1.086640
+ITLB(0)_TLB_trackerDown2=0.000000
+Memory(0):readHit=16739162.000000
+IL1(0)_trackerDown4n=0.000000
+L2(0)_trackerDown2n=0.000000
+P(0)_BPred_BTB:_tracker5=0.000000
+DL1(0):VPCMUAck=0.000000
+PTLB(0)_TLB_tracker5=0.000000
+ITLB(0)_TLB_tracker5=0.000000
+IL1(0)_trackerDown3n=0.000000
+P(0)_pref__histPrefetchDelta:max=0
+P(0)_pref__histPrefetchDelta:v=-nan
+P(0)_pref__histPrefetchDelta:n=0.000000
+P(0)_CUNIT2_15_avgExecuteTime:n=38::v=7.000000
+IL1(0)_trackerDown1n=0.000000
+DL1(0):setSharedMissState=0.000000
+IL1(0)_trackerTwo=0.000000
+IL1(0)_tracker15=0.000000
+P(0)_BPred_BTB:_tracker4=0.000000
+IL1(0)_sendFill_occ:n=384104107::v=0.014081
+L2(0):setSharedSetState=0.000000
+PTLB(0)_TLB_trackerZero=0.000000
+IL1(0)_tracker13=0.000000
+P(0)_MUNIT1_2_avgIssueTime:n=298170577::v=3.256280
+IL1(0)_tracker12=0.000000
+P(0)_BPred_BTB:_trackerZero=0.000000
+IL1(0)_tracker11=0.000000
+L2(0)_tracker7=0.000000
+P(0)_MUNIT1_18_avgRenameTime:n=7789889::v=1023891.104728
+P(0)_BPred2_BTB:_tracker11=0.000000
+IL1(0)_tracker9=0.000000
+P(0)_ExeEngine:nSmallREGStall=27861009.000000
+STLB(0)_TLB_trackerMore=0.000000
+P(0)_FetchEngine_avgBranchTime2:n=77144788::v=2.231710
+IL1(0)_tracker8=0.000000
+IL1(0)_tracker6=0.000000
+P(0)_BPred:nBranches3=0.000000
+P(0)_BPred2_BTB:_tracker14=0.000000
+DL1(0)_tracker4=0.000000
+IL1(0)_tracker4=0.000000
+IL1(0)_tracker2=0.000000
+L2(0):setInvalidHit=0.000000
+IL1(0)_tracker1=0.000000
+L2(0):invOne=114573.000000
+IL1(0)_tracker0=0.000000
+DL1(0):invNone=0.000000
+PTLB(0)_TLB_tracker6=0.000000
+L2(0):nPrefetchHitLine=0.000000
+IL1(0):MMUSetState=0.000000
+P(0)_FetchEngine:nBTAC=0.000000
+Memory(0):writeMiss=0.000000
+IL1(0):setExclusiveSetState=0.000000
+L2(0):nTryPrefetch=0.000000
+P(0)_rrobUsed:n=1745814638::v=12.808503
+L2(0)_tracker0=0.000000
+P(0)_ExeEngine_iCALU_FPMULT:n=13.000000
+IL1(0):setSharedSetState=2.000000
+IL1(0):setDirtySetState=0.000000
+ITLB(0)_TLB_tracker0=0.000000
+IL1(0):setInvalidSetState=10266.000000
+L2(0):setDirtyAck=0.000000
+IL1(0)_tracker14=0.000000
+IL1(0):VPCMUAck=0.000000
+L2(0):setInvalidMiss=0.000000
+P(0)_ExeEngine:nOutsLoadsStall=340184.000000
+P(0)_BPred:nMiss2=16819165.000000
+IL1(0)_tracker5=0.000000
+S(0):DetailTime=207702520.000000
+IL1(0)_trackerDown3=0.000000
+P(0)_BPred2_BTB:_trackerDown3n=0.000000
+P(0)_BPred2_BTB:_tracker6=0.000000
+L2(0):setInvalidAck=0.000000
+S(0):InitInst=0.000000
+IL1(0):setExclusiveAck=6649906.000000
+IL1(0):setSharedAck=12.000000
+L2(0):invNone=87165.000000
+IL1(0):setValidAck=0.000000
+ITLB(0)_TLB_tracker9=0.000000
+DL1(0):MMUHalfMiss=0.000000
+IL1(0):VPCMUSetState=0.000000
+IL1(0)p_MSHR_avgSubUse:n=0::v=-nan
+L2(0):setSharedMiss=0.000000
+IL1(0):setInvalidAck=0.000000
+L2(0):setSharedHit=0.000000
+IL1(0):VPCMUMissState=0.000000
+PTLB(0)_TLB_trackerDown1n=0.000000
+IL1(0)_trackerMore=0.000000
+IL1(0):MMUAck=0.000000
+DL1(0):invAll=104317.000000
+PTLB(0)_TLB_tracker15=0.000000
+ITLB(0)_TLB_tracker11=0.000000
+L2(0)_MSHR_avgUse:n=8501975::v=1.366616
+STLB(0)_TLB_tracker0=0.000000
+IL1(0):setExclusiveMissState=0.000000
+IL1(0):setSharedMissState=0.000000
+IL1(0)_trackerDown2=0.000000
+IL1(0):writeMissState=0.000000
+IL1(0):setDirtyAck=0.000000
+IL1(0):setInvalidMissState=0.000000
+DL1(0):displacedSend=1753490.000000
+L2(0)p_MSHR_avgSubUse:n=0::v=-nan
+IL1(0)_MSHR_avgSubUse:n=384104107::v=1.012071
+STLB(0)_TLB_trackerDown3=0.000000
+IL1(0):MMUMiss=0.000000
+L2(0)_tracker9=0.000000
+DL1(0):setExclusiveHit=0.000000
+L2(0)_capInvalidateHit=0.000000
+L2(0):VPCMUAck=0.000000
+IL1(0):setSharedMiss=0.000000
+DL1(0)_trackerDown3=0.000000
+DL1(0)_trackerDown4=0.000000
+P(0)_MUNIT1_MUNIT_AALU_occ:n=298170585::v=0.071717
+L2(0):setInvalidMissState=0.000000
+IL1(0):writeMiss=0.000000
+DL1(0):nPrefetchWasteful=0.000000
+L2(0):readMiss=8356142.000000
+IL1(0):readMiss=6649918.000000
+P(0)_BPred2_BTB:_trackerOne=0.000000
+IL1(0):MMUHit=0.000000
+IL1(0):setExclusiveMiss=0.000000
+DL1(0)_trackerDown3n=0.000000
+IL1(0)_trackerDown2n=0.000000
+IL1(0)_trackerUp1n=0.000000
+DL1(0):nPrefetchHitLine=0.000000
+STLB(0):readHit=0.000000
+PTLB(0):LowerTLBHit=19832985.000000
+PTLB(0)_TLB_trackerDown2n=0.000000
+IL1(0):setSharedHit=0.000000
+L2(0)_tracker8=0.000000
+DL1(0):setExclusiveAck=1852053.000000
+PTLB(0)_TLB_tracker14=0.000000
+IL1(0):setExclusiveHit=0.000000
+IL1(0):writeHalfMiss=0.000000
+IL1(0)_trackerZero=0.000000
+P(0)_BPred_RAS:nHit=10952506.000000
+IL1(0):readHalfMiss=4448883.000000
+P(0)_MUNIT1_11_avgRenameTime:n=114322170::v=116960678.944864
+IL1(0):readHit=373005306.000000
+IL1(0):setValidSetState=0.000000
+P(0):clockTicks=2216052837.000000
+L2(0)_trackerZero=0.000000
+P(0)_MUNIT1_wrForwardBus=79158836.000000
+IL1(0):setInvalidHit=0.000000
+IL1(0):nPrefetchDropped=0.000000
+P(0)_BPred_BTB:_tracker7=0.000000
+IL1(0):setExclusiveHalfMiss=0.000000
+P(0)_BPred_BTB:_trackerTwo=0.000000
+IL1(0)_trackerUp1=0.000000
+IL1(0):VPCMUMiss=0.000000
+DL1(0):nPrefetchRedundant=0.000000
+L2(0)_invalidateMiss=0.000000
+IL1(0):nPrefetchHitBusy=0.000000
+IL1(0)_trackerDown4=0.000000
+L2(0):nPrefetchHitPending=0.000000
+P(0)_ExeEngine_iSALU_ST:n=114322136.000000
+IL1(0):nPrefetchLineFill=0.000000
+IL1(0):nPrefetchHitPending=0.000000
+P(0)_pref__avgPrefetchConf:n=0::v=-nan
+IL1(0)_invalidateHit=0.000000
+IL1(0):MMUHalfMiss=0.000000
+IL1(0):nPrefetchUseful=0.000000
+L2(0):displacedRecv=8393610.000000
+ITLB(0)_TLB_trackerDown3=0.000000
+Memory(0):writeBack=0.000000
+IL1(0)_avgHalfMemLat:n=4448883::v=67.831473
+L2(0)_trackerDown2=0.000000
+IL1(0):setInvalidMiss=0.000000
+P(0)_MUNIT1_2_avgRenameTime:n=298170577::v=66134722.047029
+IL1(0):lineFill=6649918.000000
+L2(0):setValidSetState=0.000000
+P(0)_BPred:nTaken3=0.000000
+IL1(0):readMissState=0.000000
+L2(0):nSendPrefetch=0.000000
+P(0)_BPred_BTB:_tracker9=0.000000
+IL1(0)_capInvalidateHit=0.000000
+P(0)_ExeEngine_iSALU_ADDR:n=0.000000
+IL1(0):writeBack=0.000000
+IL1(0):invNone=0.000000
+P(0)_BPred2_BTB:_trackerTwo=0.000000
+L2(0):setDirtySetState=0.000000
+IL1(0):invOne=0.000000
+IL1(0)_avgMissLat:n=6649918::v=89.367517
+P(0)_CUNIT2_wrRegPool=38.000000
+P(0)_BPred2_BTB:nMiss=4283329.000000
+IL1(0)_avgPrefetchLat:n=0::v=-nan
+IL1(0)_capInvalidateMiss=0.000000
+L2(0):MMUSetState=0.000000
+IL1(0):displacedRecv=0.000000
+L2(0)_trackerTwo=0.000000
+L2(0)_tracker11=0.000000
+IL1(0):writeHit=0.000000
+IL1(0)_avgSnoopLat:n=10268::v=1.000877
+STLB(0)_avgMemLat:n=0::v=-nan
+L2(0):MMUMissState=0.000000
+DL1(0)p_MSHR:nStallConflict=0.000000
+IL1(0)_invalidateMiss=0.000000
+DL1(0):setDirtyAck=0.000000
+IL1(0):displacedSend=6640120.000000
+IL1(0):nSendPrefetch=0.000000
+DL1(0)_trackerDown1n=0.000000
+ITLB(0)_TLB_trackerOne=0.000000
+IL1(0)_tracker3=0.000000
+IL1(0):nTryPrefetch=0.000000
+P(0)_BPred_BTB:_tracker11=0.000000
+IL1(0):setSharedHalfMiss=0.000000
+IL1(0):VPCMUHit=0.000000
+IL1(0):writeExclusive=0.000000
+IL1(0)_MSHR:nStallConflict=6008761.000000
+Memory(0):readMiss=0.000000
+L2(0):VPCMUMiss=0.000000
+P(0)_ExeEngine_iCALU_FPALU:n=25.000000
+CmdITLB(0)_occ:n=768218254::v=0.000000
+P(0)_MUNIT1_2_avgRetireTime:n=298170577::v=21.669290
+P(0)_AUNIT0_1_avgIssueTime:n=298170786::v=3.256791
+L2(0)_trackerUp1n=0.000000
+IL1(0):invAll=10268.000000
+ITLB(0):LowerTLBMiss=100.000000
+L2(0):writeBack=87960.000000
+DL1(0):nPrefetchLineFill=0.000000
+ITLB(0):LowerTLBHit=32.000000
+CmdPTLB(0)_occ:n=991171604::v=0.000000
+IL1(0)p_MSHR:nStallConflict=0.000000
+L2(0):setSharedHalfMiss=0.000000
+ITLB(0):readMiss=132.000000
+ITLB(0)_avgMemLat:n=384103993::v=4.281545
+L2(0)_avgSnoopLat:n=229158::v=4.002068
+IL1(0)_trackerDown1=0.000000
+L2(0)_tracker14=0.000000
+ITLB(0):readHit=384103923.000000
+STLB(0)_TLB_trackerZero=0.000000
+IL1(0)_avgMemLat:n=384104107::v=4.281546
+P(0)_nReplayInst:n=0::v=-nan
+P(0)_BPred_BTB:nHit=10178540.000000
+IL1(0):MMUMissState=0.000000
+IL1(0):nPrefetchRedundant=0.000000
+IL1(0):nPrefetchWasteful=0.000000
+STLB(0)_TLB_trackerTwo=0.000000
+DL1(0)_tracker15=0.000000
+P(0)_CUNIT2_rdRegPool=76.000000
+L2(0):readMissState=0.000000
+L2(0)_avgHalfMemLat:n=12::v=32.500000
+ITLB(0)_TLB_trackerDown4=0.000000
+PTLB(0)_TLB_tracker7=0.000000
+P(0)_BPred:nFixes1=47509989.000000
+IL1(0):setInvalidHalfMiss=0.000000
+L2(0):setInvalidHalfMiss=0.000000
+ITLB(0)_avgMissLat:n=38::v=2.000000
+IL1(0)_tracker7=0.000000
+IL1(0)_tracker10=0.000000
+P(0)_BPred2_BTB:_tracker5=0.000000
+L2(0):readHit=99913.000000
+L2(0):setExclusiveMiss=13439.000000
+IL1(0)_trackerOne=0.000000
+P(0)_BPred:nTaken=70856161.000000
+IL1(0):VPCMUHalfMiss=0.000000
+L2(0):VPCMUHit=0.000000
+L2(0)_capInvalidateMiss=0.000000
+STLB(0)_avgMissLat:n=0::v=-nan
+IL1(0):nPrefetchHitLine=0.000000
+powerTime=0.000000
+#END GStats::report done

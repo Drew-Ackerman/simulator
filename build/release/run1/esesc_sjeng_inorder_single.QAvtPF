@@ -1,0 +1,280 @@
+#BEGIN Configuration used. Extracted from "esesc.conf":
+technology='ThisSOCTech'
+reportFile='sjeng_inorder_single'
+cpusimu[0]='tradCORE'
+cpuemul[0]='QEMUSectionCPU'
+pwrmodel  ='McPatPwrCounters'
+live_group=1
+live      =false
+[TASS]
+ROIOnly   =false
+doPowPrediction=1
+PowPredictionHist=5
+nInstTiming=3.000000e+05
+nInstDetail=1.000000e+05
+nInstWarmup=0
+nInstRabbit=2.000000e+06
+nInstMax  =1.000000e+10
+maxnsTime =1.000000e+12
+nInstSkip =1
+type      ='inst'
+[NoSyscall]
+runtime   =false
+generate  =false
+enable    =false
+[QEMUSectionCPU]
+params[0] ="./mips64/sjeng.mips64 sjeng.txt"
+sampler   ='TASS'
+dorun     =true
+type      ='qemu'
+syscall   ='NoSyscall'
+[ThisSOCTech]
+frequency =1.700000e+09
+[McPatPwrCounters]
+doPower   =false
+[BigMem]
+hitDelay  =60
+bsize     =64
+coldWarmup=false
+deviceType='niceCache'
+[Shared_TLB]
+lowerLevel='voidDevice'
+replPolicy='LRU'
+maxRequests=2
+assoc     =4
+size      =2097152
+hitDelay  =1
+deviceType='tlb'
+bsize     =4096
+numPorts  =0
+[PrivL2]
+lowerLevel="BigMem Memory"
+hitDelay  =26
+bkPortOccp=1
+bkNumPorts=1
+replPolicy='LRU'
+bsize     =32
+size      =2097152
+sendFillPortOccp=2
+numBanks  =1
+directory =true
+inclusive =true
+deviceType='cache'
+assoc     =16
+missDelay =26
+sendFillNumPorts=1
+maxRequests=32
+[DL1_core]
+bkPortOccp=1
+bkNumPorts=1
+size      =65536
+sendFillNumPorts=1
+numBanks  =1
+directory =false
+inclusive =true
+deviceType='cache'
+replPolicy='LRU'
+maxRequests=8
+lowerLevel="PrivL2 L2 sharedby 2"
+hitDelay  =4
+sendFillPortOccp=0
+bsize     =32
+skew      =false
+missDelay =4
+bankShift =4
+assoc     =4
+[PerCore_ITLB]
+lowerTLB_delay=20
+lowerTLB  ="Shared_TLB STLB shared"
+lowerLevel="IL1_core IL1"
+replPolicy='LRU'
+bsize     =16384
+maxRequests=4
+assoc     =16
+size      =262144
+hitDelay  =0
+numPorts  =0
+deviceType='tlb'
+[PerCore_DTLB]
+replPolicy='LRU'
+maxRequests=8
+assoc     =16
+size      =262144
+numPorts  =0
+lowerTLB_delay=20
+lowerTLB  ="Shared_TLB STLB shared"
+hitDelay  =0
+bsize     =16384
+lowerLevel="DL1_core DL1"
+deviceType='tlb'
+[IL1_core]
+missDelay =1
+replPolicy='LRU'
+bsize     =32
+assoc     =4
+maxRequests=32
+numBanks  =1
+deviceType='icache'
+bkNumPorts=1
+bkPortOccp=1
+inclusive =true
+directory =false
+lowerLevel="PrivL2 L2 sharedby 1"
+hitDelay  =2
+size      =32768
+[voidDevice]
+deviceType='void'
+[BPredIssueX2]
+btbHistorySize=9
+btbicache =true
+btbBsize  =1
+l2size    =2048
+l1size    =1
+BTACDelay =1
+addrShift =1
+type      ='2level'
+useDolc   =true
+historySize=9
+l2Bits    =2
+btbSize   =512
+btbAssoc  =4
+btbReplPolicy='LRU'
+[BPredIssueX]
+btbHistorySize=9
+btbAssoc  =32
+btbBsize  =1
+historySize=9
+l2size    =2048
+l1size    =1
+BTACDelay =4
+rasPrefetch=0
+rasSize   =8
+btbSize   =64
+addrShift =1
+l2Bits    =2
+btbReplPolicy='RANDOM'
+type      ='2level'
+[CUNIT_CALU]
+Occ       =1
+Num       =2
+[MUNIT_CALU]
+Num       =1
+Occ       =1
+[MUNIT_BALU]
+Occ       =1
+Num       =1
+[MUNIT_AALU]
+Occ       =1
+Num       =1
+[AUNIT_AALU]
+Occ       =1
+Num       =1
+[CUNIT]
+iCALU_FPALUUnit='CUNIT_CALU'
+iCALU_FPALULat=4
+iCALU_FPDIVUnit='CUNIT_CALU'
+iCALU_FPDIVLat=28
+iCALU_FPMULTUnit='CUNIT_CALU'
+iCALU_FPMULTLat=7
+schedPortOccp=1
+winSize   =32
+nRegs     =32
+recycleAt ='retire'
+schedNumPorts=2
+schedDelay=0
+[MUNIT]
+iCALU_DIVLat=8
+iCALU_MULTUnit='MUNIT_CALU'
+iCALU_MULTLat=5
+iLALU_LDUnit='MUNIT_MALU'
+iLALU_LDLat=0
+iSALU_LLLat=0
+iSALU_STUnit='MUNIT_MALU'
+iBALU_RETUnit='MUNIT_BALU'
+iBALU_RCALLUnit='MUNIT_BALU'
+iBALU_RCALLLat=4
+iBALU_RJUMPUnit='MUNIT_BALU'
+iSALU_STLat=0
+iBALU_RBRANCHUnit='MUNIT_BALU'
+iBALU_LCALLUnit='MUNIT_BALU'
+iBALU_LCALLLat=4
+iBALU_LBRANCHUnit='MUNIT_BALU'
+recycleAt ='execute'
+nRegs     =1024
+iBALU_LJUMPUnit='MUNIT_BALU'
+iSALU_ADDRUnit='MUNIT_SALU'
+iBALU_LJUMPLat=4
+iAALULat  =1
+schedNumPorts=3
+iAALUUnit ='MUNIT_AALU'
+iBALU_RETLat=4
+iSALU_SCLat=0
+iSALU_SCUnit='MUNIT_MALU'
+iSALU_ADDRLat=0
+iBALU_RBRANCHLat=4
+iBALU_LBRANCHLat=4
+winSize   =16
+iBALU_RJUMPLat=4
+schedPortOccp=1
+schedDelay=0
+iCALU_DIVUnit='MUNIT_CALU'
+iSALU_LLUnit='MUNIT_MALU'
+[AUNIT]
+iRALULat  =1
+schedPortOccp=1
+iAALUUnit ='AUNIT_AALU'
+nRegs     =1024
+schedNumPorts=1
+recycleAt ='execute'
+winSize   =16
+iRALUUnit ='AUNIT_AALU'
+iAALULat  =1
+schedDelay=0
+[PrefetchEngine]
+minDistance=0
+maxPrefetch=0
+type      ='void'
+pfStride  =1
+[tradCORE]
+nTotalRegs=40
+scbSize   =8
+StoreSetSize=8192
+enableICache=true
+IL1       ="PerCore_ITLB ITLB"
+DL1       ="PerCore_DTLB PTLB"
+prefetcher='PrefetchEngine'
+maxLoads  =24
+robSize   =64
+bpred2    ='BPredIssueX2'
+maxStores =24
+interClusterLat=0
+stForwardDelay=4
+maxIRequests=3
+cluster[0]='AUNIT'
+cluster[2]='CUNIT'
+cluster[1]='MUNIT'
+bpredDelay=2
+bb4Cycle  =1
+maxBranches=32
+retireDelay=3
+drainOnMiss=true
+clusterScheduler='RoundRobin'
+retireWidth=1
+enableDCache=true
+issueWidth=1
+type      ='ooo'
+bpred     ='BPredIssueX'
+throttlingRatio=1.000000e+00
+decodeDelay=4
+fetchWidth=1
+alignedFetch=true
+MemoryReplay=false
+renameDelay=4
+instQueueSize=24
+[MUNIT_MALU]
+Occ       =1
+Num       =1
+[MUNIT_SALU]
+Num       =1
+Occ       =1
+#END Configuration used. Extracted from "esesc.conf":
